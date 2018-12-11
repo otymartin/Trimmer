@@ -26,6 +26,7 @@
 		A13E26F621BF86F8008CFD33 /* PryntTrimmerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13E26ED21BF86F8008CFD33 /* PryntTrimmerView.swift */; };
 		A13E26F821C02D47008CFD33 /* TrimmerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13E26F721C02D47008CFD33 /* TrimmerView.swift */; };
 		A13E26FC21C031C8008CFD33 /* FrameSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13E26FB21C031C8008CFD33 /* FrameSectionController.swift */; };
+		A13E26FE21C03227008CFD33 /* FrameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13E26FD21C03227008CFD33 /* FrameCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		A13E26ED21BF86F8008CFD33 /* PryntTrimmerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PryntTrimmerView.swift; sourceTree = "<group>"; };
 		A13E26F721C02D47008CFD33 /* TrimmerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrimmerView.swift; sourceTree = "<group>"; };
 		A13E26FB21C031C8008CFD33 /* FrameSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameSectionController.swift; sourceTree = "<group>"; };
+		A13E26FD21C03227008CFD33 /* FrameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameCell.swift; sourceTree = "<group>"; };
 		BD393C1969243F0FCD6DB192 /* Pods-Trimmer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trimmer.debug.xcconfig"; path = "Target Support Files/Pods-Trimmer/Pods-Trimmer.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -161,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				A13E26F721C02D47008CFD33 /* TrimmerView.swift */,
+				A13E26FD21C03227008CFD33 /* FrameCell.swift */,
 				A13E26FB21C031C8008CFD33 /* FrameSectionController.swift */,
 			);
 			path = Trimmer;
@@ -307,6 +310,7 @@
 				A13E26F321BF86F8008CFD33 /* VideoScrollView.swift in Sources */,
 				A13E26CC21BF82D4008CFD33 /* DemoViewController.swift in Sources */,
 				A13E26F021BF86F8008CFD33 /* ThumbSelectorView.swift in Sources */,
+				A13E26FE21C03227008CFD33 /* FrameCell.swift in Sources */,
 				A13E26CA21BF82D4008CFD33 /* AppDelegate.swift in Sources */,
 				A13E26EE21BF86F8008CFD33 /* AssetVideoScrollView.swift in Sources */,
 				A13E26F221BF86F8008CFD33 /* VideoCropView.swift in Sources */,
