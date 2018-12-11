@@ -13,6 +13,17 @@
 		A13E26CF21BF82D4008CFD33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A13E26CD21BF82D4008CFD33 /* Main.storyboard */; };
 		A13E26D121BF82D6008CFD33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A13E26D021BF82D6008CFD33 /* Assets.xcassets */; };
 		A13E26D421BF82D6008CFD33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A13E26D221BF82D6008CFD33 /* LaunchScreen.storyboard */; };
+		A13E26DC21BF841F008CFD33 /* uoit.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A13E26DB21BF841F008CFD33 /* uoit.mp4 */; };
+		A13E26DE21BF842A008CFD33 /* dog.mov in Resources */ = {isa = PBXBuildFile; fileRef = A13E26DD21BF8429008CFD33 /* dog.mov */; };
+		A13E26E021BF8441008CFD33 /* me.mov in Resources */ = {isa = PBXBuildFile; fileRef = A13E26DF21BF8441008CFD33 /* me.mov */; };
+		A13E26EE21BF86F8008CFD33 /* AssetVideoScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13E26E321BF86F8008CFD33 /* AssetVideoScrollView.swift */; };
+		A13E26EF21BF86F8008CFD33 /* AVAssetTimeSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13E26E421BF86F8008CFD33 /* AVAssetTimeSelector.swift */; };
+		A13E26F021BF86F8008CFD33 /* ThumbSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13E26E521BF86F8008CFD33 /* ThumbSelectorView.swift */; };
+		A13E26F221BF86F8008CFD33 /* VideoCropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13E26E821BF86F8008CFD33 /* VideoCropView.swift */; };
+		A13E26F321BF86F8008CFD33 /* VideoScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13E26E921BF86F8008CFD33 /* VideoScrollView.swift */; };
+		A13E26F421BF86F8008CFD33 /* CropMaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13E26EA21BF86F8008CFD33 /* CropMaskView.swift */; };
+		A13E26F521BF86F8008CFD33 /* HandlerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13E26EC21BF86F8008CFD33 /* HandlerView.swift */; };
+		A13E26F621BF86F8008CFD33 /* PryntTrimmerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13E26ED21BF86F8008CFD33 /* PryntTrimmerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +36,17 @@
 		A13E26D021BF82D6008CFD33 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A13E26D321BF82D6008CFD33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A13E26D521BF82D6008CFD33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A13E26DB21BF841F008CFD33 /* uoit.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = uoit.mp4; sourceTree = "<group>"; };
+		A13E26DD21BF8429008CFD33 /* dog.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = dog.mov; sourceTree = "<group>"; };
+		A13E26DF21BF8441008CFD33 /* me.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = me.mov; sourceTree = "<group>"; };
+		A13E26E321BF86F8008CFD33 /* AssetVideoScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetVideoScrollView.swift; sourceTree = "<group>"; };
+		A13E26E421BF86F8008CFD33 /* AVAssetTimeSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVAssetTimeSelector.swift; sourceTree = "<group>"; };
+		A13E26E521BF86F8008CFD33 /* ThumbSelectorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThumbSelectorView.swift; sourceTree = "<group>"; };
+		A13E26E821BF86F8008CFD33 /* VideoCropView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCropView.swift; sourceTree = "<group>"; };
+		A13E26E921BF86F8008CFD33 /* VideoScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoScrollView.swift; sourceTree = "<group>"; };
+		A13E26EA21BF86F8008CFD33 /* CropMaskView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CropMaskView.swift; sourceTree = "<group>"; };
+		A13E26EC21BF86F8008CFD33 /* HandlerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandlerView.swift; sourceTree = "<group>"; };
+		A13E26ED21BF86F8008CFD33 /* PryntTrimmerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PryntTrimmerView.swift; sourceTree = "<group>"; };
 		BD393C1969243F0FCD6DB192 /* Pods-Trimmer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trimmer.debug.xcconfig"; path = "Target Support Files/Pods-Trimmer/Pods-Trimmer.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,6 +91,10 @@
 		A13E26C821BF82D4008CFD33 /* Trimmer */ = {
 			isa = PBXGroup;
 			children = (
+				A13E26DF21BF8441008CFD33 /* me.mov */,
+				A13E26DD21BF8429008CFD33 /* dog.mov */,
+				A13E26DB21BF841F008CFD33 /* uoit.mp4 */,
+				A13E26E121BF86F8008CFD33 /* Classes */,
 				A13E26C921BF82D4008CFD33 /* AppDelegate.swift */,
 				A13E26CB21BF82D4008CFD33 /* ViewController.swift */,
 				A13E26CD21BF82D4008CFD33 /* Main.storyboard */,
@@ -79,13 +105,51 @@
 			path = Trimmer;
 			sourceTree = "<group>";
 		};
+		A13E26E121BF86F8008CFD33 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				A13E26E221BF86F8008CFD33 /* Parents */,
+				A13E26E521BF86F8008CFD33 /* ThumbSelectorView.swift */,
+				A13E26E721BF86F8008CFD33 /* Cropper */,
+				A13E26EB21BF86F8008CFD33 /* Trimmer */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		A13E26E221BF86F8008CFD33 /* Parents */ = {
+			isa = PBXGroup;
+			children = (
+				A13E26E321BF86F8008CFD33 /* AssetVideoScrollView.swift */,
+				A13E26E421BF86F8008CFD33 /* AVAssetTimeSelector.swift */,
+			);
+			path = Parents;
+			sourceTree = "<group>";
+		};
+		A13E26E721BF86F8008CFD33 /* Cropper */ = {
+			isa = PBXGroup;
+			children = (
+				A13E26E821BF86F8008CFD33 /* VideoCropView.swift */,
+				A13E26E921BF86F8008CFD33 /* VideoScrollView.swift */,
+				A13E26EA21BF86F8008CFD33 /* CropMaskView.swift */,
+			);
+			path = Cropper;
+			sourceTree = "<group>";
+		};
+		A13E26EB21BF86F8008CFD33 /* Trimmer */ = {
+			isa = PBXGroup;
+			children = (
+				A13E26EC21BF86F8008CFD33 /* HandlerView.swift */,
+				A13E26ED21BF86F8008CFD33 /* PryntTrimmerView.swift */,
+			);
+			path = Trimmer;
+			sourceTree = "<group>";
+		};
 		BF38170C5A08C5DAE72DC97A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				BD393C1969243F0FCD6DB192 /* Pods-Trimmer.debug.xcconfig */,
 				A05C63D3152864C96396EA36 /* Pods-Trimmer.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -149,8 +213,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A13E26DC21BF841F008CFD33 /* uoit.mp4 in Resources */,
 				A13E26D421BF82D6008CFD33 /* LaunchScreen.storyboard in Resources */,
+				A13E26DE21BF842A008CFD33 /* dog.mov in Resources */,
 				A13E26D121BF82D6008CFD33 /* Assets.xcassets in Resources */,
+				A13E26E021BF8441008CFD33 /* me.mov in Resources */,
 				A13E26CF21BF82D4008CFD33 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -189,14 +256,12 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Trimmer/Pods-Trimmer-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/PryntTrimmerView/PryntTrimmerView.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PryntTrimmerView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -211,8 +276,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A13E26F521BF86F8008CFD33 /* HandlerView.swift in Sources */,
+				A13E26F621BF86F8008CFD33 /* PryntTrimmerView.swift in Sources */,
+				A13E26F421BF86F8008CFD33 /* CropMaskView.swift in Sources */,
+				A13E26F321BF86F8008CFD33 /* VideoScrollView.swift in Sources */,
 				A13E26CC21BF82D4008CFD33 /* ViewController.swift in Sources */,
+				A13E26F021BF86F8008CFD33 /* ThumbSelectorView.swift in Sources */,
 				A13E26CA21BF82D4008CFD33 /* AppDelegate.swift in Sources */,
+				A13E26EE21BF86F8008CFD33 /* AssetVideoScrollView.swift in Sources */,
+				A13E26F221BF86F8008CFD33 /* VideoCropView.swift in Sources */,
+				A13E26EF21BF86F8008CFD33 /* AVAssetTimeSelector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

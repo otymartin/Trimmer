@@ -8,7 +8,7 @@
 
 import UIKit
 import SnapKit
-import PryntTrimmerView
+import AVFoundation
 
 class ViewController: UIViewController {
     
@@ -22,12 +22,22 @@ class ViewController: UIViewController {
     private func addTrimmer() {
         self.view.addSubview(self.trimmer)
         self.trimmer.snp.makeConstraints { (make) in
-            make.height.equalTo(70)
+            make.height.equalTo(60)
             make.leading.equalTo(view.snp.leading)
             make.trailing.equalTo(view.snp.trailing)
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-30)
         }
+        self.trimmer.layoutIfNeeded()
+        
+        guard let path = Bundle.main.path(forResource: "uoit", ofType:"mp4") else {
+            print("Video Not Found")
+            return
+        }
+        
+        let asset = AVAsset(url: URL(fileURLWithPath: path))
+        
+        self.trimmer.asset = asset
     }
-
 
 }
 
