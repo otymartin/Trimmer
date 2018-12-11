@@ -14,7 +14,7 @@ final class Frame {
     
     public let image: UIImage
     
-    init(url: URL, image: UIImage) {
+    public init(url: URL, image: UIImage) {
         self.url = url
         self.image = image
     }
@@ -22,11 +22,11 @@ final class Frame {
 
 extension Frame: ListDiffable {
     
-    func diffIdentifier() -> NSObjectProtocol {
+    public func diffIdentifier() -> NSObjectProtocol {
         return self.url as NSObjectProtocol
     }
     
-    func isEqual(toDiffableObject object: ListDiffable?) -> Bool {
+    public func isEqual(toDiffableObject object: ListDiffable?) -> Bool {
         return self.url == (object as? Frame)?.url
     }
 }
