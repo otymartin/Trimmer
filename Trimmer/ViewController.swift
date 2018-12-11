@@ -29,7 +29,7 @@ class ViewController: UIViewController {
         }
         self.trimmer.layoutIfNeeded()
         
-        guard let path = Bundle.main.path(forResource: "uoit", ofType:"mp4") else {
+        guard let path = Bundle.main.path(forResource: "dog", ofType:"mov") else {
             print("Video Not Found")
             return
         }
