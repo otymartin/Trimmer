@@ -13,7 +13,9 @@ import AVFoundation
 final class TrimmerView: UIView {
     
     public var asset: AVAsset?
-
+    
+    private var frames: [UIImage] =  []
+    
     private var adapter: ListAdapter? //ListAdapter(updater: ListAdapterUpdater(), viewController: self)
     
     private lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: ListCollectionViewLayout(stickyHeaders: false, scrollDirection: .horizontal, topContentInset: 0, stretchToEdge: false))
@@ -36,10 +38,25 @@ extension TrimmerView {
     }
     
     private func configureCollectionView() {
+        self.adapter?.dataSource = self
         self.collectionView.frame = self.bounds
         self.collectionView.backgroundColor = .yellow
         self.collectionView.showsVerticalScrollIndicator = false
         self.collectionView.showsHorizontalScrollIndicator = false
         self.addSubview(self.collectionView)
     }
+}
+
+extension TrimmerView: ListAdapterDataSource {
+    
+    func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
+        return self.frames as [ListDiffable]
+    }
+    
+    func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
+        return FrameSectionController()
+    }
+    
+    func emptyView(for listAdapter: ListAdapter) -> UIView? { return nil }
+
 }

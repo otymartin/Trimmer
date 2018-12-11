@@ -10,17 +10,21 @@ import IGListKit
 
 final class FrameSectionController: ListSectionController {
     
-    public var image: UIImage?
+    public var frame: Frame?
     
     override func sizeForItem(at index: Int) -> CGSize {
         
     }
     
     override func cellForItem(at index: Int) -> UICollectionViewCell {
-        
+        guard let cell = self.collectionContext?.dequeueReusableCell(of: FrameCell.self, for: self, at: index) as? FrameCell, let frame = self.frame else {
+            fatalError()
+        }
+        cell.configure(with: frame)
+        return cell
     }
     
     override func didUpdate(to object: Any) {
-        self.image = object as? UIImage
+        self.frame = object as? Frame
     }
 }
