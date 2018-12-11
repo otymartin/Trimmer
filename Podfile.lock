@@ -1,0 +1,20 @@
+PODS:
+  - PryntTrimmerView (3.0.0)
+  - SnapKit (4.2.0)
+
+DEPENDENCIES:
+  - PryntTrimmerView
+  - SnapKit
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - PryntTrimmerView
+    - SnapKit
+
+SPEC CHECKSUMS:
+  PryntTrimmerView: 53ac64053c7ce63cb3e27f54090f52da0734891d
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+
+PODFILE CHECKSUM: b2b413d759c1d259e6a0275be2b5dde9bd51e83f
+
+COCOAPODS: 1.6.0.beta.2

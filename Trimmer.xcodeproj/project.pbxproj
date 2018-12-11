@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7ADF6070ABE70291B7738218 /* Pods_Trimmer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90C0C44816D385A179BF5131 /* Pods_Trimmer.framework */; };
 		A13E26CA21BF82D4008CFD33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13E26C921BF82D4008CFD33 /* AppDelegate.swift */; };
 		A13E26CC21BF82D4008CFD33 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13E26CB21BF82D4008CFD33 /* ViewController.swift */; };
 		A13E26CF21BF82D4008CFD33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A13E26CD21BF82D4008CFD33 /* Main.storyboard */; };
@@ -15,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		90C0C44816D385A179BF5131 /* Pods_Trimmer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Trimmer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A05C63D3152864C96396EA36 /* Pods-Trimmer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trimmer.release.xcconfig"; path = "Target Support Files/Pods-Trimmer/Pods-Trimmer.release.xcconfig"; sourceTree = "<group>"; };
 		A13E26C621BF82D4008CFD33 /* Trimmer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trimmer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A13E26C921BF82D4008CFD33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A13E26CB21BF82D4008CFD33 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		A13E26D021BF82D6008CFD33 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A13E26D321BF82D6008CFD33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A13E26D521BF82D6008CFD33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BD393C1969243F0FCD6DB192 /* Pods-Trimmer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trimmer.debug.xcconfig"; path = "Target Support Files/Pods-Trimmer/Pods-Trimmer.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7ADF6070ABE70291B7738218 /* Pods_Trimmer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		09202FFFDD69FC9DD1F01C63 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				90C0C44816D385A179BF5131 /* Pods_Trimmer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A13E26BD21BF82D4008CFD33 = {
 			isa = PBXGroup;
 			children = (
 				A13E26C821BF82D4008CFD33 /* Trimmer */,
 				A13E26C721BF82D4008CFD33 /* Products */,
+				BF38170C5A08C5DAE72DC97A /* Pods */,
+				09202FFFDD69FC9DD1F01C63 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +79,16 @@
 			path = Trimmer;
 			sourceTree = "<group>";
 		};
+		BF38170C5A08C5DAE72DC97A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BD393C1969243F0FCD6DB192 /* Pods-Trimmer.debug.xcconfig */,
+				A05C63D3152864C96396EA36 /* Pods-Trimmer.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +96,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A13E26D821BF82D6008CFD33 /* Build configuration list for PBXNativeTarget "Trimmer" */;
 			buildPhases = (
+				4AB67C5460E13166103A839E /* [CP] Check Pods Manifest.lock */,
 				A13E26C221BF82D4008CFD33 /* Sources */,
 				A13E26C321BF82D4008CFD33 /* Frameworks */,
 				A13E26C421BF82D4008CFD33 /* Resources */,
+				AE622C86382C166478E2589D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,6 +156,55 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4AB67C5460E13166103A839E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Trimmer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AE622C86382C166478E2589D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Trimmer/Pods-Trimmer-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/PryntTrimmerView/PryntTrimmerView.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PryntTrimmerView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Trimmer/Pods-Trimmer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A13E26C221BF82D4008CFD33 /* Sources */ = {
@@ -280,6 +356,7 @@
 		};
 		A13E26D921BF82D6008CFD33 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD393C1969243F0FCD6DB192 /* Pods-Trimmer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +375,7 @@
 		};
 		A13E26DA21BF82D6008CFD33 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A05C63D3152864C96396EA36 /* Pods-Trimmer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
