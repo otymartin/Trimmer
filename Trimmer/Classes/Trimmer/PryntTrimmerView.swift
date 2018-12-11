@@ -19,7 +19,7 @@ public protocol TrimmerViewDelegate: class {
 /// video preview, typically with an `AVPlayer`.
 /// Load the video by setting the `asset` property. Access the `startTime` and `endTime` of the view to get the selected time
 // range
-@IBDesignable public class TrimmerView: AVAssetTimeSelector {
+@IBDesignable public class PryntTrimmerView: AVAssetTimeSelector {
 
     // MARK: - Properties
 
@@ -203,9 +203,9 @@ public protocol TrimmerViewDelegate: class {
 
     private func setupGestures() {
 
-        let leftPanGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(TrimmerView.handlePanGesture))
+        let leftPanGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(PryntTrimmerView.handlePanGesture))
         leftHandleView.addGestureRecognizer(leftPanGestureRecognizer)
-        let rightPanGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(TrimmerView.handlePanGesture))
+        let rightPanGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(PryntTrimmerView.handlePanGesture))
         rightHandleView.addGestureRecognizer(rightPanGestureRecognizer)
     }
 

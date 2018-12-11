@@ -97,7 +97,7 @@
 				A13E26E121BF86F8008CFD33 /* Classes */,
 				A13E26C921BF82D4008CFD33 /* AppDelegate.swift */,
 				A13E26CB21BF82D4008CFD33 /* DemoViewController.swift */,
-				A13E26F721C02D47008CFD33 /* TrimmerView.swift */,
+				A13E26FA21C030CA008CFD33 /* New Group */,
 				A13E26CD21BF82D4008CFD33 /* Main.storyboard */,
 				A13E26D021BF82D6008CFD33 /* Assets.xcassets */,
 				A13E26D221BF82D6008CFD33 /* LaunchScreen.storyboard */,
@@ -153,6 +153,14 @@
 				A13E26DB21BF841F008CFD33 /* uoit.mp4 */,
 			);
 			path = Videos;
+			sourceTree = "<group>";
+		};
+		A13E26FA21C030CA008CFD33 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				A13E26F721C02D47008CFD33 /* TrimmerView.swift */,
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		BF38170C5A08C5DAE72DC97A /* Pods */ = {
