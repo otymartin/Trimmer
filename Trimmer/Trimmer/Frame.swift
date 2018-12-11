@@ -10,12 +10,11 @@ import IGListKit
 
 final class Frame {
     
-    public let url: URL
-    
+    public let id = UUID.init()
+
     public let image: UIImage
     
-    public init(url: URL, image: UIImage) {
-        self.url = url
+    public init(image: UIImage) {
         self.image = image
     }
 }
@@ -23,10 +22,10 @@ final class Frame {
 extension Frame: ListDiffable {
     
     public func diffIdentifier() -> NSObjectProtocol {
-        return self.url as NSObjectProtocol
+        return self.id as NSObjectProtocol
     }
     
     public func isEqual(toDiffableObject object: ListDiffable?) -> Bool {
-        return self.url == (object as? Frame)?.url
+        return self.id == (object as? Frame)?.id
     }
 }

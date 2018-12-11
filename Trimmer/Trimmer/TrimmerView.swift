@@ -12,7 +12,11 @@ import AVFoundation
 
 final class TrimmerView: UIView {
     
-    public var asset: AVAsset?
+    public var asset: AVAsset? {
+        didSet {
+            self.setAsset()
+        }
+    }
     
     private var frames: [Frame] =  []
     
@@ -31,6 +35,27 @@ final class TrimmerView: UIView {
     
 }
 
+extension TrimmerView: ListAdapterDataSource {
+    
+    func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
+        return self.frames as [ListDiffable]
+    }
+    
+    func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
+        return FrameSectionController()
+    }
+    
+    func emptyView(for listAdapter: ListAdapter) -> UIView? { return nil }
+
+}
+
+extension TrimmerView {
+    
+    public func setAsset() {
+        guard let asset = self.asset else { return }
+    }
+}
+
 extension TrimmerView {
     
     private func configure() {
@@ -46,18 +71,4 @@ extension TrimmerView {
         self.collectionView.showsHorizontalScrollIndicator = false
         self.addSubview(self.collectionView)
     }
-}
-
-extension TrimmerView: ListAdapterDataSource {
-    
-    func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
-        return self.frames as [ListDiffable]
-    }
-    
-    func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
-        return FrameSectionController()
-    }
-    
-    func emptyView(for listAdapter: ListAdapter) -> UIView? { return nil }
-
 }
