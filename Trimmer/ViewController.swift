@@ -7,12 +7,25 @@
 //
 
 import UIKit
+import SnapKit
+import PryntTrimmerView
 
 class ViewController: UIViewController {
-
+    
+    let trimmer = TrimmerView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        self.addTrimmer()
+    }
+    
+    private func addTrimmer() {
+        self.view.addSubview(self.trimmer)
+        self.trimmer.snp.makeConstraints { (make) in
+            make.height.equalTo(70)
+            make.leading.equalTo(view.snp.leading)
+            make.trailing.equalTo(view.snp.trailing)
+        }
     }
 
 
