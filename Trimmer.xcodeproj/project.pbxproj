@@ -25,6 +25,7 @@
 		A13E26F521BF86F8008CFD33 /* HandlerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13E26EC21BF86F8008CFD33 /* HandlerView.swift */; };
 		A13E26F621BF86F8008CFD33 /* PryntTrimmerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13E26ED21BF86F8008CFD33 /* PryntTrimmerView.swift */; };
 		A13E26F821C02D47008CFD33 /* TrimmerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13E26F721C02D47008CFD33 /* TrimmerView.swift */; };
+		A13E26FC21C031C8008CFD33 /* FrameSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13E26FB21C031C8008CFD33 /* FrameSectionController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		A13E26EC21BF86F8008CFD33 /* HandlerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandlerView.swift; sourceTree = "<group>"; };
 		A13E26ED21BF86F8008CFD33 /* PryntTrimmerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PryntTrimmerView.swift; sourceTree = "<group>"; };
 		A13E26F721C02D47008CFD33 /* TrimmerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrimmerView.swift; sourceTree = "<group>"; };
+		A13E26FB21C031C8008CFD33 /* FrameSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameSectionController.swift; sourceTree = "<group>"; };
 		BD393C1969243F0FCD6DB192 /* Pods-Trimmer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trimmer.debug.xcconfig"; path = "Target Support Files/Pods-Trimmer/Pods-Trimmer.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -97,7 +99,7 @@
 				A13E26E121BF86F8008CFD33 /* Classes */,
 				A13E26C921BF82D4008CFD33 /* AppDelegate.swift */,
 				A13E26CB21BF82D4008CFD33 /* DemoViewController.swift */,
-				A13E26FA21C030CA008CFD33 /* New Group */,
+				A13E26FA21C030CA008CFD33 /* Trimmer */,
 				A13E26CD21BF82D4008CFD33 /* Main.storyboard */,
 				A13E26D021BF82D6008CFD33 /* Assets.xcassets */,
 				A13E26D221BF82D6008CFD33 /* LaunchScreen.storyboard */,
@@ -155,12 +157,13 @@
 			path = Videos;
 			sourceTree = "<group>";
 		};
-		A13E26FA21C030CA008CFD33 /* New Group */ = {
+		A13E26FA21C030CA008CFD33 /* Trimmer */ = {
 			isa = PBXGroup;
 			children = (
 				A13E26F721C02D47008CFD33 /* TrimmerView.swift */,
+				A13E26FB21C031C8008CFD33 /* FrameSectionController.swift */,
 			);
-			path = "New Group";
+			path = Trimmer;
 			sourceTree = "<group>";
 		};
 		BF38170C5A08C5DAE72DC97A /* Pods */ = {
@@ -299,6 +302,7 @@
 			files = (
 				A13E26F521BF86F8008CFD33 /* HandlerView.swift in Sources */,
 				A13E26F621BF86F8008CFD33 /* PryntTrimmerView.swift in Sources */,
+				A13E26FC21C031C8008CFD33 /* FrameSectionController.swift in Sources */,
 				A13E26F421BF86F8008CFD33 /* CropMaskView.swift in Sources */,
 				A13E26F321BF86F8008CFD33 /* VideoScrollView.swift in Sources */,
 				A13E26CC21BF82D4008CFD33 /* DemoViewController.swift in Sources */,
