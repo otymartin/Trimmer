@@ -53,6 +53,17 @@ extension TrimmerView {
     
     public func setAsset() {
         guard let asset = self.asset else { return }
+        let size = CGSize(width: abs(60 * 0.70), height: 60)
+        let generator = AVAssetImageGenerator(asset: asset)
+        generator.appliesPreferredTrackTransform = true
+        let scaledSize = CGSize(width: size.width * UIScreen.main.scale, height: size.height * UIScreen.main.scale)
+        generator.maximumSize = scaledSize
+        
+        var times = [NSValue]()
+        for index in 0..<Int(ceil(asset.duration.seconds)) {
+            
+        }
+        generator.generateCGImagesAsynchronously(forTimes: <#T##[NSValue]#>, completionHandler: <#T##AVAssetImageGeneratorCompletionHandler##AVAssetImageGeneratorCompletionHandler##(CMTime, CGImage?, CMTime, AVAssetImageGenerator.Result, Error?) -> Void#>)
     }
 }
 
