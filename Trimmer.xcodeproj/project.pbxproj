@@ -100,7 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				A13E26F921C02D82008CFD33 /* Videos */,
-				A13E26E121BF86F8008CFD33 /* Classes */,
+				A13E26E121BF86F8008CFD33 /* 3rd Party Libraries */,
 				A13E26C921BF82D4008CFD33 /* AppDelegate.swift */,
 				A13E26CB21BF82D4008CFD33 /* DemoViewController.swift */,
 				A13E26FA21C030CA008CFD33 /* Trimmer */,
@@ -112,7 +112,7 @@
 			path = Trimmer;
 			sourceTree = "<group>";
 		};
-		A13E26E121BF86F8008CFD33 /* Classes */ = {
+		A13E26E121BF86F8008CFD33 /* 3rd Party Libraries */ = {
 			isa = PBXGroup;
 			children = (
 				A13E26E221BF86F8008CFD33 /* Parents */,
@@ -120,7 +120,7 @@
 				A13E26E721BF86F8008CFD33 /* Cropper */,
 				A13E26EB21BF86F8008CFD33 /* Trimmer */,
 			);
-			path = Classes;
+			path = "3rd Party Libraries";
 			sourceTree = "<group>";
 		};
 		A13E26E221BF86F8008CFD33 /* Parents */ = {
