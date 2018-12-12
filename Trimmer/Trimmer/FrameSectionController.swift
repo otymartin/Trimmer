@@ -8,12 +8,19 @@
 
 import IGListKit
 
+public let FrameSize = CGSize(width: 60, height: 70)
+
 final class FrameSectionController: ListSectionController {
     
     public var frame: Frame?
     
+    override init() {
+        super.init()
+        self.minimumInteritemSpacing = 0
+    }
+    
     override func sizeForItem(at index: Int) -> CGSize {
-        
+        return FrameSize
     }
     
     override func cellForItem(at index: Int) -> UICollectionViewCell {
