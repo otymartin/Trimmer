@@ -58,12 +58,16 @@ extension TrimmerView {
         generator.appliesPreferredTrackTransform = true
         let scaledSize = CGSize(width: size.width * UIScreen.main.scale, height: size.height * UIScreen.main.scale)
         generator.maximumSize = scaledSize
-        
+        let numberOfThumbnails = Int(ceil(asset.duration.seconds))
         var times = [NSValue]()
-        for index in 0..<Int(ceil(asset.duration.seconds)) {
-            
+        for index in 0..<numberOfThumbnails {
+            let time = CMTime(seconds: Float64(index), preferredTimescale: 600)
+            let value = NSValue(time: time)
+            times.append(value)
         }
-        generator.generateCGImagesAsynchronously(forTimes: <#T##[NSValue]#>, completionHandler: <#T##AVAssetImageGeneratorCompletionHandler##AVAssetImageGeneratorCompletionHandler##(CMTime, CGImage?, CMTime, AVAssetImageGenerator.Result, Error?) -> Void#>)
+        generator.generateCGImagesAsynchronously(forTimes: times) { (_, image, _, result, error) in
+            <#code#>
+        }
     }
 }
 
