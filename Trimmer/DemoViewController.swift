@@ -15,8 +15,6 @@ class DemoViewController: UIViewController {
     
     private var trimmer: TrimmerView!
     
-    private lazy var adapter = ListAdapter(updater: ListAdapterUpdater(), viewController: self)
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configure()
@@ -34,7 +32,6 @@ extension DemoViewController {
     
     private func configure() {
         self.trimmer = TrimmerView(frame: CGRect(x: 0, y: self.view.bounds.height - 100, width: self.view.bounds.width, height: 60))
-        self.adapter.dataSource = self.trimmer
         self.view.addSubview(self.trimmer)
     }
 }
