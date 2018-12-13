@@ -11,23 +11,23 @@ import AVFoundation
 
 final class Frame {
     
-    public let index: CMTime
+    public let time: CMTime
 
     public let image: UIImage?
     
-    public init(index: CMTime, image: UIImage? = nil) {
+    public init(time: CMTime, image: UIImage? = nil) {
         self.image = image
-        self.index = index
+        self.time = time
     }
 }
 
 extension Frame: ListDiffable {
     
     public func diffIdentifier() -> NSObjectProtocol {
-        return self.index as NSObjectProtocol
+        return self.time as NSObjectProtocol
     }
     
     public func isEqual(toDiffableObject object: ListDiffable?) -> Bool {
-        return self.index == (object as? Frame)?.index
+        return self.time == (object as? Frame)?.time
     }
 }

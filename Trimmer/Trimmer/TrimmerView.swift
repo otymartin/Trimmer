@@ -60,13 +60,16 @@ extension TrimmerView {
         generator.maximumSize = scaledSize
         let numberOfThumbnails = Int(ceil(asset.duration.seconds))
         var times = [NSValue]()
+        
         for index in 0..<numberOfThumbnails {
             let time = CMTime(seconds: Float64(index), preferredTimescale: 600)
             let value = NSValue(time: time)
             times.append(value)
         }
-        generator.generateCGImagesAsynchronously(forTimes: times) { (_, image, _, result, error) in
-            <#code#>
+        generator.generateCGImagesAsynchronously(forTimes: times) { (requestedTime, cgImage, _, result, error) in
+            if error == nil, result == .succeeded, let cgImage = cgImage {
+                
+            }
         }
     }
 }
