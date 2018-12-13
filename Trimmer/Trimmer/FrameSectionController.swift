@@ -8,7 +8,7 @@
 
 import IGListKit
 
-public let FrameSize = CGSize(width: 60, height: 70)
+public let FrameSize = CGSize(width: 42, height: 60)
 
 final class FrameSectionController: ListSectionController {
     
@@ -24,10 +24,10 @@ final class FrameSectionController: ListSectionController {
     }
     
     override func cellForItem(at index: Int) -> UICollectionViewCell {
-        guard let cell = self.collectionContext?.dequeueReusableCell(of: FrameCell.self, for: self, at: index) as? FrameCell, let frame = self.frame else {
+        guard let cell = self.collectionContext?.dequeueReusableCell(of: FrameCell.self, for: self, at: index) as? FrameCell else {
             fatalError()
         }
-        cell.configure(with: frame)
+        cell.configure(with: self.frame)
         return cell
     }
     

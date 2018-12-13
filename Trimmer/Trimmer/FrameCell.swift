@@ -21,9 +21,9 @@ final class FrameCell: UICollectionViewCell {
 
 extension FrameCell {
     
-    public func configure(with frame: Frame) {
+    public func configure(with frame: Frame?) {
         self.imageView.frame = self.bounds
-        self.imageView.image = frame.image
+        self.imageView.image = frame?.image
         self.imageView.clipsToBounds = true
         self.imageView.backgroundColor = .black
         self.imageView.contentMode = .scaleAspectFill

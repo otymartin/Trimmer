@@ -12,12 +12,6 @@ import AVFoundation
 
 final class TrimmerView: UIView {
     
-    public var asset: AVAsset? {
-        didSet {
-            self.setAsset()
-        }
-    }
-    
     private var frames: [Frame] =  []
     
     private lazy var adapter = ListAdapter(updater: ListAdapterUpdater(), viewController: nil)
@@ -26,7 +20,7 @@ final class TrimmerView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.configureCollectionView()
+        self.configure()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -51,8 +45,7 @@ extension TrimmerView: ListAdapterDataSource {
 
 extension TrimmerView {
     
-    public func setAsset() {
-        guard let asset = self.asset else { return }
+    public func set(_ asset: AVAsset) {
         let size = CGSize(width: abs(60 * 0.70), height: 60)
         let generator = AVAssetImageGenerator(asset: asset)
         generator.appliesPreferredTrackTransform = true
