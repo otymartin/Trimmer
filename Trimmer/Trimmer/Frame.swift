@@ -28,6 +28,6 @@ extension Frame: ListDiffable {
     }
     
     public func isEqual(toDiffableObject object: ListDiffable?) -> Bool {
-        return self.time.value == (object as? Frame)?.time.value
+        return self.time == (object as? Frame)?.time
     }
 }

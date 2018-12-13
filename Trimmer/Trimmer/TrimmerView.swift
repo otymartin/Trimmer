@@ -45,6 +45,7 @@ extension TrimmerView: ListAdapterDataSource {
 
 extension TrimmerView {
     
+    /// Generate thumbnail images from AVAsset, initialize Frame objects and update collectionView after asyncronously Fetching thumbnail images
     public func set(_ asset: AVAsset) {
         let size = CGSize(width: abs(60 * 0.70), height: 60)
         let generator = AVAssetImageGenerator(asset: asset)
