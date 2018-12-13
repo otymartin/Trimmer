@@ -7,25 +7,27 @@
 //
 
 import IGListKit
+import AVFoundation
 
 final class Frame {
     
-    public let id = UUID.init()
+    public let index: CMTime
 
-    public let image: UIImage
+    public let image: UIImage?
     
-    public init(image: UIImage) {
+    public init(index: CMTime, image: UIImage? = nil) {
         self.image = image
+        self.index = index
     }
 }
 
 extension Frame: ListDiffable {
     
     public func diffIdentifier() -> NSObjectProtocol {
-        return self.id as NSObjectProtocol
+        return self.index as NSObjectProtocol
     }
     
     public func isEqual(toDiffableObject object: ListDiffable?) -> Bool {
-        return self.id == (object as? Frame)?.id
+        return self.index == (object as? Frame)?.index
     }
 }
