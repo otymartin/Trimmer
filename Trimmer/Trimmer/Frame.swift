@@ -13,7 +13,7 @@ final class Frame {
     
     public let time: CMTime
 
-    public let image: UIImage?
+    public var image: UIImage?
     
     public init(time: CMTime, image: UIImage? = nil) {
         self.image = image
