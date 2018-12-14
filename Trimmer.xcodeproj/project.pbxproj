@@ -27,6 +27,7 @@
 		A13E26FE21C03227008CFD33 /* FrameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13E26FD21C03227008CFD33 /* FrameCell.swift */; };
 		A13E270021C03478008CFD33 /* Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13E26FF21C03478008CFD33 /* Frame.swift */; };
 		A1CF017821C36C2000EEB740 /* dog.mov in Resources */ = {isa = PBXBuildFile; fileRef = A1CF017721C36C2000EEB740 /* dog.mov */; };
+		A1CF017A21C3790C00EEB740 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CF017921C3790C00EEB740 /* UIViewExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		A13E26FD21C03227008CFD33 /* FrameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameCell.swift; sourceTree = "<group>"; };
 		A13E26FF21C03478008CFD33 /* Frame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Frame.swift; sourceTree = "<group>"; };
 		A1CF017721C36C2000EEB740 /* dog.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = dog.mov; sourceTree = "<group>"; };
+		A1CF017921C3790C00EEB740 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		BD393C1969243F0FCD6DB192 /* Pods-Trimmer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trimmer.debug.xcconfig"; path = "Target Support Files/Pods-Trimmer/Pods-Trimmer.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -101,6 +103,7 @@
 				A13E26E121BF86F8008CFD33 /* 3rd Party Libraries */,
 				A13E26C921BF82D4008CFD33 /* AppDelegate.swift */,
 				A13E26CB21BF82D4008CFD33 /* DemoViewController.swift */,
+				A1CF017921C3790C00EEB740 /* UIViewExtensions.swift */,
 				A13E26FA21C030CA008CFD33 /* Trimmer */,
 				A13E26CD21BF82D4008CFD33 /* Main.storyboard */,
 				A13E26D021BF82D6008CFD33 /* Assets.xcassets */,
@@ -303,6 +306,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A13E26F521BF86F8008CFD33 /* HandlerView.swift in Sources */,
+				A1CF017A21C3790C00EEB740 /* UIViewExtensions.swift in Sources */,
 				A13E26F621BF86F8008CFD33 /* PryntTrimmerView.swift in Sources */,
 				A13E26FC21C031C8008CFD33 /* FrameSectionController.swift in Sources */,
 				A13E26F421BF86F8008CFD33 /* CropMaskView.swift in Sources */,

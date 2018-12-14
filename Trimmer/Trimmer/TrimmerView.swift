@@ -13,6 +13,8 @@ import AVFoundation
 final class TrimmerView: UIView {
     
     private var frames: [Frame] =  []
+    
+    private lazy var selector = UIView()
         
     private lazy var adapter = ListAdapter(updater: ListAdapterUpdater(), viewController: nil)
     
@@ -78,6 +80,7 @@ extension TrimmerView {
     
     private func configure() {
         self.configureCollectionView()
+        self.addSelector()
     }
     
     private func configureCollectionView() {
@@ -91,5 +94,19 @@ extension TrimmerView {
         self.collectionView.showsHorizontalScrollIndicator = false
         self.collectionView.contentInset = UIEdgeInsets(top: 0, left: self.bounds.width - (FrameSize.width * 3), bottom: 0, right: FrameSize.width)
         self.addSubview(self.collectionView)
+    }
+    
+    private func addSelector() {
+        self.selector.layer.borderWidth = 5
+        self.selector.layer.cornerRadius = 3
+        self.selector.backgroundColor = .clear
+        self.selector.layer.borderColor = UIColor.red.cgColor
+        self.addSubview(self.selector)
+        self.selector.snp.makeConstraints { [weak self] (make) in
+            guard let view = self else { return }
+            make.width.equalTo(FrameSize.width * 2)
+            make.height.equalTo(view.bounds.height)
+            make.leading.equalTo(view.snp.leading).offset(bounds.width - (FrameSize.width * 3))
+        }
     }
 }
