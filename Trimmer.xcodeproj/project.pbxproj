@@ -26,6 +26,7 @@
 		A13E26FC21C031C8008CFD33 /* FrameSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13E26FB21C031C8008CFD33 /* FrameSectionController.swift */; };
 		A13E26FE21C03227008CFD33 /* FrameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13E26FD21C03227008CFD33 /* FrameCell.swift */; };
 		A13E270021C03478008CFD33 /* Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13E26FF21C03478008CFD33 /* Frame.swift */; };
+		A1CF017821C36C2000EEB740 /* dog.mov in Resources */ = {isa = PBXBuildFile; fileRef = A1CF017721C36C2000EEB740 /* dog.mov */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		A13E26FB21C031C8008CFD33 /* FrameSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameSectionController.swift; sourceTree = "<group>"; };
 		A13E26FD21C03227008CFD33 /* FrameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameCell.swift; sourceTree = "<group>"; };
 		A13E26FF21C03478008CFD33 /* Frame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Frame.swift; sourceTree = "<group>"; };
+		A1CF017721C36C2000EEB740 /* dog.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = dog.mov; sourceTree = "<group>"; };
 		BD393C1969243F0FCD6DB192 /* Pods-Trimmer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trimmer.debug.xcconfig"; path = "Target Support Files/Pods-Trimmer/Pods-Trimmer.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -150,6 +152,7 @@
 		A13E26F921C02D82008CFD33 /* Videos */ = {
 			isa = PBXGroup;
 			children = (
+				A1CF017721C36C2000EEB740 /* dog.mov */,
 				A13E26DB21BF841F008CFD33 /* uoit.mp4 */,
 			);
 			path = Videos;
@@ -237,6 +240,7 @@
 			files = (
 				A13E26DC21BF841F008CFD33 /* uoit.mp4 in Resources */,
 				A13E26D421BF82D6008CFD33 /* LaunchScreen.storyboard in Resources */,
+				A1CF017821C36C2000EEB740 /* dog.mov in Resources */,
 				A13E26D121BF82D6008CFD33 /* Assets.xcassets in Resources */,
 				A13E26CF21BF82D4008CFD33 /* Main.storyboard in Resources */,
 			);

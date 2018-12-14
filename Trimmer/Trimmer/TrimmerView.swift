@@ -13,7 +13,7 @@ import AVFoundation
 final class TrimmerView: UIView {
     
     private var frames: [Frame] =  []
-    
+        
     private lazy var adapter = ListAdapter(updater: ListAdapterUpdater(), viewController: nil)
     
     private lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: ListCollectionViewLayout(stickyHeaders: false, scrollDirection: .horizontal, topContentInset: 0, stretchToEdge: false))
@@ -51,9 +51,10 @@ extension TrimmerView {
         generator.appliesPreferredTrackTransform = true
         let scaledSize = CGSize(width: FrameSize.width * UIScreen.main.scale, height: FrameSize.height * UIScreen.main.scale)
         generator.maximumSize = scaledSize
-        let numberOfThumbnails = Int(ceil(asset.duration.seconds))
+        let numberOfThumbnails = Int(ceil(asset.duration.seconds)) + 1
         var times = [NSValue]()
         var thumbnailFrames: [Frame] = []
+        print(asset.duration.seconds)
         for index in 0..<numberOfThumbnails {
             let time = CMTime(seconds: Double(index), preferredTimescale: 600)
             let value = NSValue(time: time)
@@ -65,7 +66,7 @@ extension TrimmerView {
             if error == nil, result == .succeeded, let cgImage = cgImage {
                 self.frames.filter { $0.time == requestedTime }.first?.image = UIImage(cgImage: cgImage)
                 DispatchQueue.main.async {
-                    print("RequestedTime \(requestedTime.value), Actual Time: \(actualTime.value)")
+                    print("Requested: \(requestedTime.value) | Actual: \(actualTime.value)")
                      self.adapter.performUpdates(animated: true, completion: nil)
                 }
             }
@@ -81,12 +82,14 @@ extension TrimmerView {
     
     private func configureCollectionView() {
         self.adapter.dataSource = self
+        self.collectionView.bounces = true
         self.collectionView.frame = self.bounds
         self.collectionView.backgroundColor = .yellow
         self.adapter.collectionView = self.collectionView
+        self.collectionView.alwaysBounceHorizontal = true
         self.collectionView.showsVerticalScrollIndicator = false
         self.collectionView.showsHorizontalScrollIndicator = false
-        self.collectionView.contentInset.left = FrameSize.width * 3
+        self.collectionView.contentInset = UIEdgeInsets(top: 0, left: self.bounds.width - (FrameSize.width * 3), bottom: 0, right: FrameSize.width)
         self.addSubview(self.collectionView)
     }
 }

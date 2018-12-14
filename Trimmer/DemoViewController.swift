@@ -18,7 +18,7 @@ class DemoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configure()
-        guard let path = Bundle.main.path(forResource: "uoit", ofType:"mp4") else {
+        guard let path = Bundle.main.path(forResource: "dog", ofType:"mov") else {
             print("Video Not Found")
             return
         }
@@ -31,7 +31,7 @@ class DemoViewController: UIViewController {
 extension DemoViewController {
     
     private func configure() {
-        self.trimmer = TrimmerView(frame: CGRect(x: 0, y: self.view.bounds.height - 100, width: self.view.bounds.width, height: 60))
+        self.trimmer = TrimmerView(frame: CGRect(x: 0, y: self.view.bounds.height - 200, width: self.view.bounds.width, height: 60))
         self.view.addSubview(self.trimmer)
     }
 }
