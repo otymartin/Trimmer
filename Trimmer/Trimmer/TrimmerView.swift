@@ -47,26 +47,26 @@ extension TrimmerView {
     
     /// Generate thumbnail images from AVAsset, initialize Frame objects and update collectionView after asyncronously Fetching thumbnail images
     public func set(_ asset: AVAsset) {
-        let size = CGSize(width: abs(60 * 0.70), height: 60)
         let generator = AVAssetImageGenerator(asset: asset)
         generator.appliesPreferredTrackTransform = true
-        let scaledSize = CGSize(width: size.width * UIScreen.main.scale, height: size.height * UIScreen.main.scale)
+        let scaledSize = CGSize(width: FrameSize.width * UIScreen.main.scale, height: FrameSize.height * UIScreen.main.scale)
         generator.maximumSize = scaledSize
         let numberOfThumbnails = Int(ceil(asset.duration.seconds))
         var times = [NSValue]()
         var thumbnailFrames: [Frame] = []
         for index in 0..<numberOfThumbnails {
-            let time = CMTime(seconds: Float64(index), preferredTimescale: 600)
+            let time = CMTime(seconds: Double(index), preferredTimescale: 600)
             let value = NSValue(time: time)
             times.append(value)
             thumbnailFrames.append(Frame(time: time))
         }
         self.frames = thumbnailFrames
-        generator.generateCGImagesAsynchronously(forTimes: times) { (requestedTime, cgImage, _, result, error) in
+        generator.generateCGImagesAsynchronously(forTimes: times) { (requestedTime, cgImage, actualTime, result, error) in
             if error == nil, result == .succeeded, let cgImage = cgImage {
                 self.frames.filter { $0.time == requestedTime }.first?.image = UIImage(cgImage: cgImage)
                 DispatchQueue.main.async {
-                    self.adapter.performUpdates(animated: true, completion: nil)
+                    print("RequestedTime \(requestedTime.value), Actual Time: \(actualTime.value)")
+                     self.adapter.performUpdates(animated: true, completion: nil)
                 }
             }
         }
@@ -86,6 +86,7 @@ extension TrimmerView {
         self.adapter.collectionView = self.collectionView
         self.collectionView.showsVerticalScrollIndicator = false
         self.collectionView.showsHorizontalScrollIndicator = false
+        self.collectionView.contentInset.left = FrameSize.width * 3
         self.addSubview(self.collectionView)
     }
 }

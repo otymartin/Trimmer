@@ -27,6 +27,6 @@ extension FrameCell {
         self.imageView.clipsToBounds = true
         self.imageView.backgroundColor = .black
         self.imageView.contentMode = .scaleAspectFill
-        self.contentView.addSubview(self.contentView)
+        self.contentView.addSubview(self.imageView)
     }
 }

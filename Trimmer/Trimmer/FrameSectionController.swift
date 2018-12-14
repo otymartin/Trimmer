@@ -8,7 +8,7 @@
 
 import IGListKit
 
-public let FrameSize = CGSize(width: 42, height: 60)
+public let FrameSize = CGSize(width: 56, height: 56)
 
 final class FrameSectionController: ListSectionController {
     
@@ -16,7 +16,7 @@ final class FrameSectionController: ListSectionController {
     
     override init() {
         super.init()
-        self.minimumInteritemSpacing = 0
+        self.inset = UIEdgeInsets(top: 2, left: 0, bottom: 2, right: 0)
     }
     
     override func sizeForItem(at index: Int) -> CGSize {
