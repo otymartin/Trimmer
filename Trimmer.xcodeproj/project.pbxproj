@@ -166,9 +166,9 @@
 		A13E26FA21C030CA008CFD33 /* Trimmer */ = {
 			isa = PBXGroup;
 			children = (
-				A13E26F721C02D47008CFD33 /* TrimmerView.swift */,
 				A13E26FF21C03478008CFD33 /* Frame.swift */,
 				A13E26FD21C03227008CFD33 /* FrameCell.swift */,
+				A13E26F721C02D47008CFD33 /* TrimmerView.swift */,
 				A1E628B821C4985400163244 /* FrameSectionModel.swift */,
 				A13E26FB21C031C8008CFD33 /* FrameSectionController.swift */,
 			);

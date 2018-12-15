@@ -31,7 +31,7 @@ public struct FrameSectionMath {
     }
     
     public static var insets: UIEdgeInsets {
-        return UIEdgeInsets(top: self.selectorBorderWidth, left: 0, bottom: self.selectorBorderWidth, right: 0)
+        return UIEdgeInsets(top: self.selectorBorderWidth, left: 0, bottom: self.selectorBorderWidth, right: 1.5)
     }
     
     public static var selectorSize: CGSize {

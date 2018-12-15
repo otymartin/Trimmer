@@ -17,8 +17,9 @@ class DemoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = .black
         self.configure()
-        guard let path = Bundle.main.path(forResource: "dog", ofType:"mov") else {
+        guard let path = Bundle.main.path(forResource: "uoit", ofType:"mp4") else {
             print("Video Not Found")
             return
         }

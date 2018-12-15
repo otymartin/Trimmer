@@ -60,7 +60,7 @@ extension TrimmerView {
         var thumbnailFrames: [Frame] = []
         let lastIndex = numberOfThumbnails - 1
         for index in 0..<numberOfThumbnails {
-            let time = CMTime(seconds: index == lastIndex ? asset.duration.seconds: Double(index), preferredTimescale: 1000)
+            let time = CMTime(seconds: index == lastIndex ? asset.duration.seconds: Double(index), preferredTimescale: 600)
             let value = NSValue(time: time)
             times.append(value)
             thumbnailFrames.append(Frame(time: time))
@@ -89,7 +89,7 @@ extension TrimmerView {
         self.adapter.dataSource = self
         self.collectionView.bounces = true
         self.collectionView.frame = self.bounds
-        self.collectionView.backgroundColor = .yellow
+        self.collectionView.backgroundColor = .clear
         self.adapter.collectionView = self.collectionView
         self.collectionView.alwaysBounceHorizontal = true
         self.collectionView.showsVerticalScrollIndicator = false
@@ -102,7 +102,7 @@ extension TrimmerView {
         self.selector.layer.cornerRadius = 6
         self.selector.backgroundColor = .clear
         self.selector.isUserInteractionEnabled = false
-        self.selector.layer.borderColor = UIColor.red.cgColor
+        self.selector.layer.borderColor = UIColor.white.cgColor
         self.selector.layer.borderWidth = FrameSectionMath.selectorBorderWidth
         self.addSubview(self.selector)
         self.selector.snp.makeConstraints { [weak self] (make) in
