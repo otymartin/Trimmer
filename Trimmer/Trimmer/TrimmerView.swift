@@ -14,11 +14,11 @@ final class TrimmerView: UIView {
     
     private var model = FrameSectionModel()
     
-    private lazy var selector = UIView()
+    public lazy var selector = UIView()
         
     private lazy var adapter = ListAdapter(updater: ListAdapterUpdater(), viewController: nil)
     
-    private lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: ListCollectionViewLayout(stickyHeaders: false, scrollDirection: .horizontal, topContentInset: 0, stretchToEdge: false))
+    public lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: ListCollectionViewLayout(stickyHeaders: false, scrollDirection: .horizontal, topContentInset: 0, stretchToEdge: false))
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -91,22 +91,23 @@ extension TrimmerView {
         self.collectionView.alwaysBounceHorizontal = true
         self.collectionView.showsVerticalScrollIndicator = false
         self.collectionView.showsHorizontalScrollIndicator = false
-        self.collectionView.contentInset = UIEdgeInsets(top: 0, left: self.bounds.width - (FrameSize.width * 3), bottom: 0, right: FrameSize.width)
+        self.collectionView.contentInset = UIEdgeInsets(top: 0, left: FrameSectionMath.collectionViewContentOffset, bottom: 0, right: 0)
         self.addSubview(self.collectionView)
     }
     
     private func addSelector() {
-        self.selector.layer.borderWidth = 4
-        self.selector.layer.cornerRadius = 3
+        self.selector.layer.cornerRadius = 6
         self.selector.backgroundColor = .clear
         self.selector.isUserInteractionEnabled = false
         self.selector.layer.borderColor = UIColor.red.cgColor
+        self.selector.layer.borderWidth = FrameSectionMath.selectorBorderWidth
         self.addSubview(self.selector)
         self.selector.snp.makeConstraints { [weak self] (make) in
             guard let view = self else { return }
-            make.width.equalTo((FrameSize.width * 2) + 4)
-            make.height.equalTo(view.bounds.height)
-            make.leading.equalTo(view.snp.leading).offset(bounds.width - (FrameSize.width * 3))
+            make.width.equalTo(FrameSectionMath.selectorSize.width)
+            make.height.equalTo(FrameSectionMath.selectorSize.height)
+            make.leading.equalTo(view.snp.leading).offset(FrameSectionMath.selectorLeftOffset)
         }
+        self.selector.layoutIfNeeded()
     }
 }

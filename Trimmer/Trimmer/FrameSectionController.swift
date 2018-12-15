@@ -8,7 +8,40 @@
 
 import IGListKit
 
-public let FrameSize = CGSize(width: 56, height: 56)
+public struct FrameSectionMath {
+    
+    public static var selectorBorderWidth: CGFloat {
+        return 3
+    }
+    
+    private static var collectionViewHeight: CGFloat {
+        return 66
+    }
+    
+    public static var selectorLeftOffset: CGFloat {
+        return self.collectionViewSize.width - ((self.frameSize.width * 3) + self.selectorBorderWidth)
+    }
+    
+    public static var collectionViewContentOffset: CGFloat {
+        return self.collectionViewSize.width - (self.frameSize.width * 3)
+    }
+    
+    public static var collectionViewSize: CGSize {
+        return CGSize(width: UIScreen.main.bounds.width, height: self.collectionViewHeight)
+    }
+    
+    public static var insets: UIEdgeInsets {
+        return UIEdgeInsets(top: self.selectorBorderWidth, left: 0, bottom: self.selectorBorderWidth, right: 0)
+    }
+    
+    public static var selectorSize: CGSize {
+        return CGSize(width: (self.frameSize.width * 2) + (self.selectorBorderWidth * 2), height: self.frameSize.height + (self.selectorBorderWidth * 2))
+    }
+    
+    public static var frameSize: CGSize {
+        return CGSize(width: self.collectionViewSize.height - (self.selectorBorderWidth * 2), height: self.collectionViewSize.height - (self.selectorBorderWidth * 2))
+    }
+}
 
 final class FrameSectionController: ListSectionController {
     
@@ -16,11 +49,11 @@ final class FrameSectionController: ListSectionController {
     
     override init() {
         super.init()
-        self.inset = UIEdgeInsets(top: 4, left: 0, bottom: 4, right: 0)
+        self.inset = FrameSectionMath.insets
     }
     
     override func sizeForItem(at index: Int) -> CGSize {
-        return FrameSize
+        return FrameSectionMath.frameSize
     }
     
     override func cellForItem(at index: Int) -> UICollectionViewCell {
