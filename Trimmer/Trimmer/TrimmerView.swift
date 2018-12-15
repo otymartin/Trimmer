@@ -97,14 +97,15 @@ extension TrimmerView {
     }
     
     private func addSelector() {
-        self.selector.layer.borderWidth = 5
+        self.selector.layer.borderWidth = 4
         self.selector.layer.cornerRadius = 3
         self.selector.backgroundColor = .clear
+        self.selector.isUserInteractionEnabled = false
         self.selector.layer.borderColor = UIColor.red.cgColor
         self.addSubview(self.selector)
         self.selector.snp.makeConstraints { [weak self] (make) in
             guard let view = self else { return }
-            make.width.equalTo(FrameSize.width * 2)
+            make.width.equalTo((FrameSize.width * 2) + 4)
             make.height.equalTo(view.bounds.height)
             make.leading.equalTo(view.snp.leading).offset(bounds.width - (FrameSize.width * 3))
         }

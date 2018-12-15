@@ -31,7 +31,7 @@ class DemoViewController: UIViewController {
 extension DemoViewController {
     
     private func configure() {
-        self.trimmer = TrimmerView(frame: CGRect(x: 0, y: self.view.bounds.height - 200, width: self.view.bounds.width, height: 60))
+        self.trimmer = TrimmerView(frame: CGRect(x: 0, y: self.view.bounds.height - 200, width: self.view.bounds.width, height: 64))
         self.view.addSubview(self.trimmer)
     }
 }

@@ -16,7 +16,7 @@ final class FrameSectionController: ListSectionController {
     
     override init() {
         super.init()
-        self.inset = UIEdgeInsets(top: 2, left: 0, bottom: 2, right: 0)
+        self.inset = UIEdgeInsets(top: 4, left: 0, bottom: 4, right: 0)
     }
     
     override func sizeForItem(at index: Int) -> CGSize {
