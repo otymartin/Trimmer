@@ -50,14 +50,17 @@ extension TrimmerView {
     /// Generate thumbnail images from AVAsset, initialize Frame objects and update collectionView after asyncronously Fetching thumbnail images
     public func set(_ asset: AVAsset) {
         let generator = AVAssetImageGenerator(asset: asset)
+        generator.requestedTimeToleranceAfter = .zero
+        generator.requestedTimeToleranceBefore = .zero
         generator.appliesPreferredTrackTransform = true
         let scaledSize = CGSize(width: UIScreen.main.bounds.width * UIScreen.main.scale, height: UIScreen.main.bounds.height * UIScreen.main.scale)
         generator.maximumSize = scaledSize
         let numberOfThumbnails = Int(ceil(asset.duration.seconds)) + 1
         var times = [NSValue]()
         var thumbnailFrames: [Frame] = []
+        let lastIndex = numberOfThumbnails - 1
         for index in 0..<numberOfThumbnails {
-            let time = CMTime(seconds: Double(index), preferredTimescale: 600)
+            let time = CMTime(seconds: index == lastIndex ? asset.duration.seconds: Double(index), preferredTimescale: 1000)
             let value = NSValue(time: time)
             times.append(value)
             thumbnailFrames.append(Frame(time: time))
