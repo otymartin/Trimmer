@@ -30,6 +30,7 @@
 		A1CF017A21C3790C00EEB740 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CF017921C3790C00EEB740 /* UIViewExtensions.swift */; };
 		A1E628B921C4985400163244 /* FrameSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E628B821C4985400163244 /* FrameSectionModel.swift */; };
 		A1E628BB21C55CDA00163244 /* FramesGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E628BA21C55CDA00163244 /* FramesGenerator.swift */; };
+		A1E628BD21C585FD00163244 /* TimerSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E628BC21C585FD00163244 /* TimerSelector.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		A1CF017921C3790C00EEB740 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		A1E628B821C4985400163244 /* FrameSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameSectionModel.swift; sourceTree = "<group>"; };
 		A1E628BA21C55CDA00163244 /* FramesGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FramesGenerator.swift; sourceTree = "<group>"; };
+		A1E628BC21C585FD00163244 /* TimerSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerSelector.swift; sourceTree = "<group>"; };
 		BD393C1969243F0FCD6DB192 /* Pods-Trimmer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trimmer.debug.xcconfig"; path = "Target Support Files/Pods-Trimmer/Pods-Trimmer.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -171,6 +173,7 @@
 				A13E26FF21C03478008CFD33 /* Frame.swift */,
 				A13E26FD21C03227008CFD33 /* FrameCell.swift */,
 				A13E26F721C02D47008CFD33 /* TrimmerView.swift */,
+				A1E628BC21C585FD00163244 /* TimerSelector.swift */,
 				A1E628BA21C55CDA00163244 /* FramesGenerator.swift */,
 				A1E628B821C4985400163244 /* FrameSectionModel.swift */,
 				A13E26FB21C031C8008CFD33 /* FrameSectionController.swift */,
@@ -313,6 +316,7 @@
 			files = (
 				A13E26F521BF86F8008CFD33 /* HandlerView.swift in Sources */,
 				A1CF017A21C3790C00EEB740 /* UIViewExtensions.swift in Sources */,
+				A1E628BD21C585FD00163244 /* TimerSelector.swift in Sources */,
 				A13E26F621BF86F8008CFD33 /* PryntTrimmerView.swift in Sources */,
 				A1E628B921C4985400163244 /* FrameSectionModel.swift in Sources */,
 				A13E26FC21C031C8008CFD33 /* FrameSectionController.swift in Sources */,
