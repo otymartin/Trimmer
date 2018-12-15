@@ -31,3 +31,10 @@ extension Frame: ListDiffable {
         return self.time == (object as? Frame)?.time && self.image == (object as? Frame)?.image
     }
 }
+
+extension Frame: Equatable {
+    
+    public static func ==(lhs: Frame, rhs: Frame) -> Bool {
+        return lhs.time == rhs.time && lhs.image == rhs.image
+    }
+}
