@@ -13,4 +13,8 @@ final class TimeSelector {
     
     private var virtualPosition: CGFloat?
     
+    public var initialPosition: CGFloat {
+        return FrameSectionMath.collectionViewSize.width - (FrameSectionMath.frameSize.width * 3)
+    }
+    
 }
