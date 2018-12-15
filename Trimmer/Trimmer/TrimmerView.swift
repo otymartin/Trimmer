@@ -91,7 +91,7 @@ extension TrimmerView {
         self.collectionView.alwaysBounceHorizontal = true
         self.collectionView.showsVerticalScrollIndicator = false
         self.collectionView.showsHorizontalScrollIndicator = false
-        self.collectionView.contentInset = UIEdgeInsets(top: 0, left: FrameSectionMath.collectionViewContentOffset, bottom: 0, right: 0)
+        self.collectionView.contentInset = UIEdgeInsets(top: 0, left: FrameSectionMath.collectionViewContentOffset, bottom: 0, right: FrameSectionMath.frameSize.width)
         self.addSubview(self.collectionView)
     }
     
