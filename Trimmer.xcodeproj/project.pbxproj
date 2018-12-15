@@ -29,6 +29,7 @@
 		A1CF017821C36C2000EEB740 /* dog.mov in Resources */ = {isa = PBXBuildFile; fileRef = A1CF017721C36C2000EEB740 /* dog.mov */; };
 		A1CF017A21C3790C00EEB740 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CF017921C3790C00EEB740 /* UIViewExtensions.swift */; };
 		A1E628B921C4985400163244 /* FrameSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E628B821C4985400163244 /* FrameSectionModel.swift */; };
+		A1E628BB21C55CDA00163244 /* FramesGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E628BA21C55CDA00163244 /* FramesGenerator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		A1CF017721C36C2000EEB740 /* dog.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = dog.mov; sourceTree = "<group>"; };
 		A1CF017921C3790C00EEB740 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		A1E628B821C4985400163244 /* FrameSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameSectionModel.swift; sourceTree = "<group>"; };
+		A1E628BA21C55CDA00163244 /* FramesGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FramesGenerator.swift; sourceTree = "<group>"; };
 		BD393C1969243F0FCD6DB192 /* Pods-Trimmer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trimmer.debug.xcconfig"; path = "Target Support Files/Pods-Trimmer/Pods-Trimmer.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -169,6 +171,7 @@
 				A13E26FF21C03478008CFD33 /* Frame.swift */,
 				A13E26FD21C03227008CFD33 /* FrameCell.swift */,
 				A13E26F721C02D47008CFD33 /* TrimmerView.swift */,
+				A1E628BA21C55CDA00163244 /* FramesGenerator.swift */,
 				A1E628B821C4985400163244 /* FrameSectionModel.swift */,
 				A13E26FB21C031C8008CFD33 /* FrameSectionController.swift */,
 			);
@@ -319,6 +322,7 @@
 				A13E26F021BF86F8008CFD33 /* ThumbSelectorView.swift in Sources */,
 				A13E26FE21C03227008CFD33 /* FrameCell.swift in Sources */,
 				A13E26CA21BF82D4008CFD33 /* AppDelegate.swift in Sources */,
+				A1E628BB21C55CDA00163244 /* FramesGenerator.swift in Sources */,
 				A13E26EE21BF86F8008CFD33 /* AssetVideoScrollView.swift in Sources */,
 				A13E26F221BF86F8008CFD33 /* VideoCropView.swift in Sources */,
 				A13E270021C03478008CFD33 /* Frame.swift in Sources */,
