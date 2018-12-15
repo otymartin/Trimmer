@@ -11,15 +11,17 @@ import AVFoundation
 
 protocol FramesGeneratorDelegate: class {
     
-    func didGenerate(_ frames: FrameSectionModel)
+    func performUpdates()
     
 }
 
 final class FramesGenerator {
     
+    public var section = FrameSectionModel()
+    
     private var generator: AVAssetImageGenerator?
     
-    public weak var delegate: FramesGeneratorDelegate?
+    public var delegate: FramesGeneratorDelegate?
     
 }
 
@@ -42,16 +44,17 @@ extension FramesGenerator {
             times.append(value)
             frames.append(Frame(time: time))
         }
-        self.delegate?.didGenerate(FrameSectionModel(frames: frames))
+        self.section = FrameSectionModel(frames: frames)
+        self.generateThumnails(at: times)
     }
     
-    private func generateThumnails(at times: [NSValue], for section: FrameSectionModel) {
+    private func generateThumnails(at times: [NSValue]) {
         self.generator?.generateCGImagesAsynchronously(forTimes: times) { (requestedTime, cgImage, actualTime, result, error) in
             if error == nil, result == .succeeded, let cgImage = cgImage {
                 let newFrame = Frame(time: requestedTime, image: UIImage(cgImage: cgImage))
-                let newSection = section.add(newFrame)
+                self.section = self.section.add(newFrame)
                 DispatchQueue.main.async {
-                    self.delegate?.didGenerate(newSection)
+                    self.delegate?.performUpdates()
                 }
             }
         }

@@ -12,10 +12,10 @@ import AVFoundation
 
 final class TrimmerView: UIView {
     
-    private var model = FrameSectionModel()
-    
     public lazy var selector = UIView()
-        
+    
+    private lazy var generator = FramesGenerator()
+    
     private lazy var adapter = ListAdapter(updater: ListAdapterUpdater(), viewController: nil)
     
     public lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: ListCollectionViewLayout(stickyHeaders: false, scrollDirection: .horizontal, topContentInset: 0, stretchToEdge: false))
@@ -31,10 +31,17 @@ final class TrimmerView: UIView {
     
 }
 
+extension TrimmerView: FramesGeneratorDelegate {
+    
+    public func performUpdates() {
+        self.adapter.performUpdates(animated: true, completion: nil)
+    }
+}
+
 extension TrimmerView: ListAdapterDataSource {
     
     func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
-        return self.model.frames as [ListDiffable]
+        return self.generator.section.frames as [ListDiffable]
     }
     
     func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
@@ -47,34 +54,8 @@ extension TrimmerView: ListAdapterDataSource {
 
 extension TrimmerView {
     
-    /// Generate thumbnail images from AVAsset, initialize Frame objects and update collectionView after asyncronously Fetching thumbnail images
     public func set(_ asset: AVAsset) {
-        let generator = AVAssetImageGenerator(asset: asset)
-        generator.requestedTimeToleranceAfter = .zero
-        generator.requestedTimeToleranceBefore = .zero
-        generator.appliesPreferredTrackTransform = true
-        let scaledSize = CGSize(width: UIScreen.main.bounds.width * UIScreen.main.scale, height: UIScreen.main.bounds.height * UIScreen.main.scale)
-        generator.maximumSize = scaledSize
-        let numberOfThumbnails = Int(ceil(asset.duration.seconds)) + 1
-        var times = [NSValue]()
-        var thumbnailFrames: [Frame] = []
-        let lastIndex = numberOfThumbnails - 1
-        for index in 0..<numberOfThumbnails {
-            let time = CMTime(seconds: index == lastIndex ? asset.duration.seconds: Double(index), preferredTimescale: 600)
-            let value = NSValue(time: time)
-            times.append(value)
-            thumbnailFrames.append(Frame(time: time))
-        }
-        self.model = FrameSectionModel(frames: thumbnailFrames)
-        generator.generateCGImagesAsynchronously(forTimes: times) { (requestedTime, cgImage, actualTime, result, error) in
-            if error == nil, result == .succeeded, let cgImage = cgImage {
-                let newFrame = Frame(time: requestedTime, image: UIImage(cgImage: cgImage))
-                self.model = self.model.add(newFrame)
-                DispatchQueue.main.async {
-                     self.adapter.performUpdates(animated: true, completion: nil)
-                }
-            }
-        }
+        self.generator.generate(for: asset)
     }
 }
 
@@ -83,6 +64,7 @@ extension TrimmerView {
     private func configure() {
         self.configureCollectionView()
         self.addSelector()
+        self.generator.delegate = self
     }
     
     private func configureCollectionView() {
