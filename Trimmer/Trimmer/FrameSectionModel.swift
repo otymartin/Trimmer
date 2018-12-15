@@ -10,10 +10,23 @@ import IGListKit
 
 final class FrameSectionModel {
     
-    public let frames: [Frame] = []
+    public let frames: [Frame]
     
-    init(frames: [Frame]) {
+    init(frames: [Frame] = []) {
         self.frames = frames
+    }
+}
+
+extension FrameSectionModel {
+    
+    public func set(_ thumbnail: UIImage, to frame: Frame) -> FrameSectionModel {
+        var frames = self.frames
+        if let index = frames.firstIndex(of: frame) {
+            frames.remove(at: index)
+        }
+        frames.append(Frame(time: frame.time, image: thumbnail))
+        frames.sort { $0.time.value < $1.time.value }
+        return FrameSectionModel(frames: frames)
     }
 }
 
