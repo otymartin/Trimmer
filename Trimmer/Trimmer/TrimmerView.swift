@@ -12,7 +12,7 @@ import AVFoundation
 
 final class TrimmerView: UIView {
     
-    private var frames: [Frame] =  []
+    private var model = FrameSectionModel()
     
     private lazy var selector = UIView()
         
@@ -34,7 +34,7 @@ final class TrimmerView: UIView {
 extension TrimmerView: ListAdapterDataSource {
     
     func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
-        return self.frames as [ListDiffable]
+        return self.model.frames as [ListDiffable]
     }
     
     func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
@@ -51,24 +51,23 @@ extension TrimmerView {
     public func set(_ asset: AVAsset) {
         let generator = AVAssetImageGenerator(asset: asset)
         generator.appliesPreferredTrackTransform = true
-        let scaledSize = CGSize(width: FrameSize.width * UIScreen.main.scale, height: FrameSize.height * UIScreen.main.scale)
+        let scaledSize = CGSize(width: UIScreen.main.bounds.width * UIScreen.main.scale, height: UIScreen.main.bounds.height * UIScreen.main.scale)
         generator.maximumSize = scaledSize
         let numberOfThumbnails = Int(ceil(asset.duration.seconds)) + 1
         var times = [NSValue]()
         var thumbnailFrames: [Frame] = []
-        print(asset.duration.seconds)
         for index in 0..<numberOfThumbnails {
             let time = CMTime(seconds: Double(index), preferredTimescale: 600)
             let value = NSValue(time: time)
             times.append(value)
             thumbnailFrames.append(Frame(time: time))
         }
-        self.frames = thumbnailFrames
+        self.model = FrameSectionModel(frames: thumbnailFrames)
         generator.generateCGImagesAsynchronously(forTimes: times) { (requestedTime, cgImage, actualTime, result, error) in
             if error == nil, result == .succeeded, let cgImage = cgImage {
-                self.frames.filter { $0.time == requestedTime }.first?.image = UIImage(cgImage: cgImage)
+                let newFrame = Frame(time: requestedTime, image: UIImage(cgImage: cgImage))
+                self.model = self.model.add(newFrame)
                 DispatchQueue.main.async {
-                    print("Requested: \(requestedTime.value) | Actual: \(actualTime.value)")
                      self.adapter.performUpdates(animated: true, completion: nil)
                 }
             }

@@ -19,13 +19,13 @@ final class FrameSectionModel {
 
 extension FrameSectionModel {
     
-    public func set(_ thumbnail: UIImage, to frame: Frame) -> FrameSectionModel {
+    public func add(_ newFrame: Frame) -> FrameSectionModel {
         var frames = self.frames
-        if let index = frames.firstIndex(of: frame) {
-            frames.remove(at: index)
+        let oldFrame = frames.filter { $0.time == newFrame.time }.first
+        if let oldFrame = oldFrame, let indexOfOldFrame = frames.firstIndex(of: oldFrame) {
+            frames.remove(at: indexOfOldFrame)
+            frames.insert(newFrame, at: indexOfOldFrame)
         }
-        frames.append(Frame(time: frame.time, image: thumbnail))
-        frames.sort { $0.time.value < $1.time.value }
         return FrameSectionModel(frames: frames)
     }
 }
