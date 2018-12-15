@@ -33,12 +33,6 @@ extension DemoViewController {
     private func configure() {
         self.trimmer = TrimmerView(frame: CGRect(x: 0, y: self.view.bounds.height - 200, width: FrameSectionMath.collectionViewSize.width, height: FrameSectionMath.collectionViewSize.height))
         self.view.addSubview(self.trimmer)
-        print("Trimmerframe \(self.trimmer.frame)")
-        print("Selectorframe \(self.trimmer.selector.frame)")
-        print("Offset \(FrameSectionMath.collectionViewContentOffset)")
-        print("FrameSize \(FrameSectionMath.frameSize)")
-        print("CVInset \(self.trimmer.collectionView.contentInset)")
-        print("ContentSize \(self.trimmer.collectionView.contentSize)")
     }
 }
 
