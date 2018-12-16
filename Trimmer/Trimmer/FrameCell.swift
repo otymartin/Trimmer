@@ -15,12 +15,6 @@ enum CornersToRound {
 }
 
 final class FrameCell: UICollectionViewCell {
-    
-    public var shouldRoundCorners: CornersToRound = .none {
-        didSet {
-            self.roundCorners()
-        }
-    }
 
     private lazy var imageView = UIImageView()
     
@@ -34,21 +28,36 @@ final class FrameCell: UICollectionViewCell {
 extension FrameCell {
     
     public func configure(with frame: Frame?) {
+        self.layer.shouldRasterize = true
         self.imageView.frame = self.bounds
         self.imageView.image = frame?.image
-        self.imageView.clipsToBounds = true
         self.imageView.backgroundColor = .clear
+        self.imageView.clipsToBounds = true
         self.imageView.contentMode = .scaleAspectFill
         self.contentView.addSubview(self.imageView)
-        self.roundCorners()
+        self.layer.rasterizationScale = UIScreen.main.scale
+        self.layer.masksToBounds = false
+        self.contentView.layer.masksToBounds = true
+        self.layer.backgroundColor = UIColor.clear.cgColor
+        guard let position = frame?.position else { return }
+        self.roundCorners(for: position)
     }
     
-    private func roundCorners() {
-        switch shouldRoundCorners {
-        case .left:
-            self.contentView.roundCorners(UIRectCorner.topLeft.union(UIRectCorner.bottomLeft), radius: 6)
-        case .right:
-            self.contentView.roundCorners(UIRectCorner.topRight.union(UIRectCorner.bottomRight), radius: 6)
+    private func roundCorners(for position: FramePosition) {
+        print("Position: \(position)")
+        switch position {
+        case .first:
+            self.imageView.setCornerRadius(radius: 6)
+            self.layer.cornerRadius = 6
+            self.layer.shadowPath = UIBezierPath.init(roundedRect: self.bounds, cornerRadius: 6).cgPath
+            //self.imageView.roundCorners(UIRectCorner.topLeft.union(UIRectCorner.bottomLeft), radius: 6)
+            //self.contentView.roundCorners(UIRectCorner.topLeft.union(UIRectCorner.bottomLeft), radius: 6)
+        case .last:
+            self.imageView.setCornerRadius(radius: 6)
+            self.layer.cornerRadius = 6
+            self.layer.shadowPath = UIBezierPath.init(roundedRect: self.bounds, cornerRadius: 6).cgPath
+            //self.imageView.roundCorners(UIRectCorner.topRight.union(UIRectCorner.bottomRight), radius: 6)
+            //self.contentView.roundCorners(UIRectCorner.topRight.union(UIRectCorner.bottomRight), radius: 6)
         default:
             break
         }

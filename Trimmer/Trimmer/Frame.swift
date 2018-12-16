@@ -12,6 +12,7 @@ import AVFoundation
 public enum FramePosition {
     case first
     case last
+    case inner
 }
 
 final class Frame {
@@ -22,7 +23,7 @@ final class Frame {
     
     public var position: FramePosition
     
-    public init(time: CMTime, image: UIImage? = nil, position: FramePosition) {
+    public init(time: CMTime, position: FramePosition = .inner, image: UIImage? = nil) {
         self.time = time
         self.image = image
         self.position = position

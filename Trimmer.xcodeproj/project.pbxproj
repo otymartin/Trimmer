@@ -24,6 +24,7 @@
 		A1E628BB21C55CDA00163244 /* FramesGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E628BA21C55CDA00163244 /* FramesGenerator.swift */; };
 		A1E628BD21C585FD00163244 /* TimeSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E628BC21C585FD00163244 /* TimeSelector.swift */; };
 		A1E628BF21C5D51C00163244 /* MathExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E628BE21C5D51C00163244 /* MathExtensions.swift */; };
+		A1E628C121C6156300163244 /* DimView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E628C021C6156300163244 /* DimView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		A1E628BA21C55CDA00163244 /* FramesGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FramesGenerator.swift; sourceTree = "<group>"; };
 		A1E628BC21C585FD00163244 /* TimeSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSelector.swift; sourceTree = "<group>"; };
 		A1E628BE21C5D51C00163244 /* MathExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathExtensions.swift; sourceTree = "<group>"; };
+		A1E628C021C6156300163244 /* DimView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimView.swift; sourceTree = "<group>"; };
 		BD393C1969243F0FCD6DB192 /* Pods-Trimmer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trimmer.debug.xcconfig"; path = "Target Support Files/Pods-Trimmer/Pods-Trimmer.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -118,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				A13E26FF21C03478008CFD33 /* Frame.swift */,
+				A1E628C021C6156300163244 /* DimView.swift */,
 				A13E26FD21C03227008CFD33 /* FrameCell.swift */,
 				A13E26F721C02D47008CFD33 /* TrimmerView.swift */,
 				A1E628BC21C585FD00163244 /* TimeSelector.swift */,
@@ -272,6 +275,7 @@
 				A13E26CA21BF82D4008CFD33 /* AppDelegate.swift in Sources */,
 				A1E628BB21C55CDA00163244 /* FramesGenerator.swift in Sources */,
 				A1E628BF21C5D51C00163244 /* MathExtensions.swift in Sources */,
+				A1E628C121C6156300163244 /* DimView.swift in Sources */,
 				A13E270021C03478008CFD33 /* Frame.swift in Sources */,
 				A13E26F821C02D47008CFD33 /* TrimmerView.swift in Sources */,
 			);

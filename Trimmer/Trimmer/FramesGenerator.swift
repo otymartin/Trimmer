@@ -45,7 +45,7 @@ extension FramesGenerator {
         for index in 0..<numberOfThumbnails {
             let time = CMTime(seconds: index == lastIndex ? asset.duration.seconds: Double(index), preferredTimescale: 600)
             times.append(NSValue(time: time))
-            frames.append(Frame(time: time))
+            frames.append(Frame(time: time, position: index == 0 ? .first : false || index == lastIndex ? .last : .inner, image: nil))
         }
         
         self.section = FrameSectionModel(frames: frames)
@@ -56,10 +56,13 @@ extension FramesGenerator {
     private func generateThumnails(at times: [NSValue]) {
         self.generator?.generateCGImagesAsynchronously(forTimes: times) { (requestedTime, cgImage, actualTime, result, error) in
             if error == nil, result == .succeeded, let cgImage = cgImage {
-                let newFrame = Frame(time: requestedTime, image: UIImage(cgImage: cgImage))
-                self.section = self.section.add(newFrame)
-                DispatchQueue.main.async {
-                    self.delegate?.performUpdates()
+                let oldFrame = self.section.frames.filter { $0.time == requestedTime }.first
+                if let oldFrame = oldFrame {
+                    let newFrame = Frame(time: requestedTime, position: oldFrame.position, image: UIImage(cgImage: cgImage))
+                    self.section = self.section.add(newFrame)
+                    DispatchQueue.main.async {
+                        self.delegate?.performUpdates()
+                    }
                 }
             }
         }

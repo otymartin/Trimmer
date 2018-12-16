@@ -135,7 +135,11 @@ extension TimeSelector: UIScrollViewDelegate {
         self.delegate?.seek(to: selectedTime)
     }
     
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+    public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        self.delegate?.resumePlayback()
+    }
+    
+    public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         self.delegate?.resumePlayback()
     }
 }

@@ -15,9 +15,9 @@ final class TrimmerView: UIView {
     
     public lazy var trimmer = UIView()
     
-    private lazy var leftDimView = UIView()
+    private lazy var leftDimView = DimView()
     
-    private lazy var rightDimView = UIView()
+    private lazy var rightDimView = DimView()
     
     private lazy var selector = TimeSelector()
     
@@ -136,6 +136,8 @@ extension TrimmerView {
     }
     
     private func addDimViews() {
+        self.leftDimView.position = .first
+        self.leftDimView.roundCorners([.topLeft, .bottomLeft], radius: 6)
         self.leftDimView.addShadow(contentOffset: .zero, radius: 3, color: .black, opacity: 0.1)
         self.leftDimView.isUserInteractionEnabled = false
         self.leftDimView.backgroundColor = UIColor.black.withAlphaComponent(0.6)
@@ -147,9 +149,10 @@ extension TrimmerView {
             make.leading.equalTo(trimmer.snp.leading)
             make.height.equalTo(FrameSectionMath.frameSize.height)
         }
-        
         self.leftDimView.layoutIfNeeded()
         
+        self.rightDimView.position = .last
+        self.rightDimView.roundCorners([.topRight, .bottomRight], radius: 6)
         self.rightDimView.addShadow(contentOffset: .zero, radius: 3, color: .black, opacity: 0.1)
         self.rightDimView.isUserInteractionEnabled = false
         self.rightDimView.backgroundColor = UIColor.black.withAlphaComponent(0.6)
@@ -161,7 +164,6 @@ extension TrimmerView {
             make.trailing.equalTo(trimmer.snp.trailing).offset(FrameSectionMath.frameSize.width)
             make.height.equalTo(FrameSectionMath.frameSize.height)
         }
-        
         self.rightDimView.layoutIfNeeded()
     }
 }
