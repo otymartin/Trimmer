@@ -17,7 +17,6 @@ class DemoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .white
         self.configure()
         guard let path = Bundle.main.path(forResource: "uoit", ofType:"mp4") else {
             print("Video Not Found")
@@ -32,6 +31,7 @@ class DemoViewController: UIViewController {
 extension DemoViewController {
     
     private func configure() {
+        self.view.backgroundColor = .white
         self.trimmer = TrimmerView(frame: CGRect(x: 0, y: self.view.bounds.height - 200, width: FrameSectionMath.collectionViewSize.width, height: FrameSectionMath.collectionViewSize.height))
         self.view.addSubview(self.trimmer)
     }

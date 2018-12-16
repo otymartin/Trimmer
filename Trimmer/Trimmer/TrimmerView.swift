@@ -111,10 +111,11 @@ extension TrimmerView {
     }
     
     private func addTrimmer() {
+        self.trimmer.addShadow(contentOffset: .zero, radius: 3, color: .black, opacity: 0.1)
         self.trimmer.layer.cornerRadius = 6
         self.trimmer.backgroundColor = .clear
         self.trimmer.isUserInteractionEnabled = false
-        self.trimmer.layer.borderColor = UIColor.red.cgColor
+        self.trimmer.layer.borderColor = UIColor.white.cgColor
         self.trimmer.layer.borderWidth = FrameSectionMath.selectorBorderWidth
         self.addSubview(self.trimmer)
         self.trimmer.snp.makeConstraints { [weak self] (make) in
@@ -127,6 +128,7 @@ extension TrimmerView {
     }
     
     private func addDimViews() {
+        self.leftDimView.addShadow(contentOffset: .zero, radius: 3, color: .black, opacity: 0.1)
         self.leftDimView.isUserInteractionEnabled = false
         self.leftDimView.backgroundColor = UIColor.black.withAlphaComponent(0.6)
         self.addSubview(self.leftDimView)
@@ -140,6 +142,7 @@ extension TrimmerView {
         
         self.leftDimView.layoutIfNeeded()
         
+        self.rightDimView.addShadow(contentOffset: .zero, radius: 3, color: .black, opacity: 0.1)
         self.rightDimView.isUserInteractionEnabled = false
         self.rightDimView.backgroundColor = UIColor.black.withAlphaComponent(0.6)
         self.addSubview(self.rightDimView)

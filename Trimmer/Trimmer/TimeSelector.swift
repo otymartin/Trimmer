@@ -116,7 +116,6 @@ final class TimeSelector: NSObject {
 extension TimeSelector: UIScrollViewDelegate {
     
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        print(rightOffset)
         self.delegate?.dimView(leftOffset: self.leftOffset, rightOffset: self.rightOffset)
         guard let selectedTime = self.selectedTime else { return }
         self.delegate?.seek(to: selectedTime)
