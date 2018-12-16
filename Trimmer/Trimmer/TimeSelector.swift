@@ -15,9 +15,9 @@ protocol TrimmerViewDelegate: class {
     
     func seek(to time: CMTime)
     
-    func dimView(leftOffset: CGFloat)
-    
     var collectionView: UICollectionView { get set }
+    
+    func dimView(leftOverflow: CGFloat, rightOverflow: CGFloat)
 }
 
 extension TrimmerViewDelegate {
@@ -88,13 +88,24 @@ final class TimeSelector: NSObject {
         return self.delegate?.collectionView.contentSize ?? .zero
     }
     
+    private var leftOverflow: CGFloat {
+        return -(self.contentOffset ?? 0 < 0 ? 0 : self.contentOffset ?? 0).subtract(FrameSectionMath.selectorBorderWidth)
+    }
+    
+    private var rightOverflow: CGFloat {
+        let value = self.contentSize.width.subtract(self.leftOverflow.add(FrameSectionMath.frameSize.width.multiplied(by: 2)))
+        return value < 0.0 ? 0 : value
+    }
+    
 }
 
 extension TimeSelector: UIScrollViewDelegate {
     
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        print(self.contentOffset)
-        self.delegate?.dimView(leftOffset: self.contentOffset ?? 0 < 0 ? 0 : self.contentOffset ?? 0)
+        print("CONTENT SIZE \(self.contentSize.width)")
+        print("LEFT OVERFLOW \(self.leftOverflow)")
+        print(self.rightOverflow)
+        self.delegate?.dimView(leftOverflow: self.leftOverflow, rightOverflow: self.rightOverflow)
         guard let selectedTime = self.selectedTime else { return }
         self.delegate?.seek(to: selectedTime)
     }

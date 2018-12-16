@@ -46,9 +46,12 @@ extension TrimmerView: TrimmerViewDelegate {
     public func resumePlayback() {
     }
     
-    public func dimView(leftOffset: CGFloat) {
+    public func dimView(leftOverflow: CGFloat, rightOverflow: CGFloat) {
         self.leftDimView.snp.updateConstraints { (make) in
-            make.leading.equalTo(trimmer.snp.leading).offset(-leftOffset)
+            make.leading.equalTo(trimmer.snp.leading).offset(leftOverflow)
+        }
+        self.rightDimView.snp.updateConstraints { (make) in
+            make.trailing.equalTo(trimmer.snp.trailing).offset(rightOverflow.add(FrameSectionMath.selectorBorderWidth))
         }
     }
     
@@ -111,7 +114,7 @@ extension TrimmerView {
         self.trimmer.layer.cornerRadius = 6
         self.trimmer.backgroundColor = .clear
         self.trimmer.isUserInteractionEnabled = false
-        self.trimmer.layer.borderColor = UIColor.yellow.cgColor
+        self.trimmer.layer.borderColor = UIColor.red.cgColor
         self.trimmer.layer.borderWidth = FrameSectionMath.selectorBorderWidth
         self.addSubview(self.trimmer)
         self.trimmer.snp.makeConstraints { [weak self] (make) in
@@ -125,25 +128,26 @@ extension TrimmerView {
     
     private func addDimViews() {
         self.leftDimView.isUserInteractionEnabled = false
-        self.leftDimView.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+        self.leftDimView.backgroundColor = UIColor.black.withAlphaComponent(0.6)
         self.addSubview(self.leftDimView)
         self.leftDimView.snp.makeConstraints { [weak self] (make) in
             guard let view = self else { return }
             make.centerY.equalTo(view.snp.centerY)
-            make.leading.equalTo(trimmer.snp.leading)
             make.trailing.equalTo(trimmer.snp.leading)
+            make.leading.equalTo(trimmer.snp.leading)
             make.height.equalTo(FrameSectionMath.frameSize.height)
         }
         
         self.leftDimView.layoutIfNeeded()
         
         self.rightDimView.isUserInteractionEnabled = false
-        self.rightDimView.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+        self.rightDimView.backgroundColor = UIColor.black.withAlphaComponent(0.6)
         self.addSubview(self.rightDimView)
         self.rightDimView.snp.makeConstraints { [weak self] (make) in
             guard let view = self else { return }
             make.centerY.equalTo(view.snp.centerY)
             make.leading.equalTo(trimmer.snp.trailing)
+            make.trailing.equalTo(trimmer.snp.trailing).offset(FrameSectionMath.frameSize.width)
             make.height.equalTo(FrameSectionMath.frameSize.height)
         }
         
