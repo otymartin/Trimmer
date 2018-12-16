@@ -15,15 +15,15 @@ final class TrimmerView: UIView {
     
     public lazy var trimmer = UIView()
     
-    private lazy var leftDimView = DimView()
-    
-    private lazy var rightDimView = DimView()
-    
     private lazy var selector = TimeSelector()
     
     private lazy var generator = FramesGenerator()
     
     public weak var delegate: TrimmerViewDelegate?
+    
+    private lazy var leftDimView = TrimmerDimView()
+    
+    private lazy var rightDimView = TrimmerDimView()
     
     private lazy var adapter = ListAdapter(updater: ListAdapterUpdater(), viewController: nil)
     

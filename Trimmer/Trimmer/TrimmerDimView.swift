@@ -1,5 +1,5 @@
 //
-//  DimView.swift
+//  TrimmerDimView.swift
 //  Trimmer
 //
 //  Created by Martin Otyeka on 2018-12-16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class DimView: UIView {
+final class TrimmerDimView: UIView {
     
     public var position: FramePosition = .inner
     
