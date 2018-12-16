@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1000"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B72F36F8896CC3A575C5A716C7167C96"
+               BlueprintIdentifier = "5982431DA5374D9E2B36AEE42587A3F8"
                BuildableName = "Pods_Trimmer.framework"
                BlueprintName = "Pods-Trimmer"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B72F36F8896CC3A575C5A716C7167C96"
+            BlueprintIdentifier = "5982431DA5374D9E2B36AEE42587A3F8"
             BuildableName = "Pods_Trimmer.framework"
             BlueprintName = "Pods-Trimmer"
             ReferencedContainer = "container:Pods.xcodeproj">

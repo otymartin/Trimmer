@@ -4,21 +4,25 @@ PODS:
   - IGListKit/Default (3.4.0):
     - IGListKit/Diffing
   - IGListKit/Diffing (3.4.0)
+  - Player (0.12.1)
   - SnapKit (4.2.0)
 
 DEPENDENCIES:
   - IGListKit
+  - Player
   - SnapKit
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - IGListKit
+    - Player
     - SnapKit
 
 SPEC CHECKSUMS:
   IGListKit: 7a5d788e9fb746bcd402baa8e8b24bc3bd2a5a07
+  Player: ae8070a33c9360f5c93c247c00236b9489f62fca
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
 
-PODFILE CHECKSUM: d3506db8a5c3eba617a4fd23883fc783c56d93c2
+PODFILE CHECKSUM: 19cc0a7354924094fd1439eff58fd4b6c0199c57
 
 COCOAPODS: 1.6.0.beta.2
