@@ -44,20 +44,11 @@ extension FrameCell {
     }
     
     private func roundCorners(for position: FramePosition) {
-        print("Position: \(position)")
         switch position {
         case .first:
-            self.imageView.setCornerRadius(radius: 6)
-            self.layer.cornerRadius = 6
-            self.layer.shadowPath = UIBezierPath.init(roundedRect: self.bounds, cornerRadius: 6).cgPath
-            //self.imageView.roundCorners(UIRectCorner.topLeft.union(UIRectCorner.bottomLeft), radius: 6)
-            //self.contentView.roundCorners(UIRectCorner.topLeft.union(UIRectCorner.bottomLeft), radius: 6)
+            self.imageView.roundCorners([.topLeft, .bottomLeft], radius: 6)
         case .last:
-            self.imageView.setCornerRadius(radius: 6)
-            self.layer.cornerRadius = 6
-            self.layer.shadowPath = UIBezierPath.init(roundedRect: self.bounds, cornerRadius: 6).cgPath
-            //self.imageView.roundCorners(UIRectCorner.topRight.union(UIRectCorner.bottomRight), radius: 6)
-            //self.contentView.roundCorners(UIRectCorner.topRight.union(UIRectCorner.bottomRight), radius: 6)
+            self.imageView.roundCorners([.topRight, .bottomRight], radius: 6)
         default:
             break
         }

@@ -6,6 +6,8 @@
 //  Copyright © 2018 Capsule. All rights reserved.
 //
 
+import UIKit
+
 final class DimView: UIView {
     
     public var position: FramePosition = .inner

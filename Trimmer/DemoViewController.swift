@@ -28,7 +28,14 @@ class DemoViewController: UIViewController {
         self.configure()
         let asset = AVAsset(url: URL(fileURLWithPath: path))
         self.trimmer.set(asset)
-        
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
+    override var prefersHomeIndicatorAutoHidden: Bool {
+        return true
     }
 }
 
