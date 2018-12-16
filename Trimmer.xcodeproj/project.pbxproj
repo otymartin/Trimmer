@@ -14,14 +14,6 @@
 		A13E26D121BF82D6008CFD33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A13E26D021BF82D6008CFD33 /* Assets.xcassets */; };
 		A13E26D421BF82D6008CFD33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A13E26D221BF82D6008CFD33 /* LaunchScreen.storyboard */; };
 		A13E26DC21BF841F008CFD33 /* uoit.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A13E26DB21BF841F008CFD33 /* uoit.mp4 */; };
-		A13E26EE21BF86F8008CFD33 /* AssetVideoScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13E26E321BF86F8008CFD33 /* AssetVideoScrollView.swift */; };
-		A13E26EF21BF86F8008CFD33 /* AVAssetTimeSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13E26E421BF86F8008CFD33 /* AVAssetTimeSelector.swift */; };
-		A13E26F021BF86F8008CFD33 /* ThumbSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13E26E521BF86F8008CFD33 /* ThumbSelectorView.swift */; };
-		A13E26F221BF86F8008CFD33 /* VideoCropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13E26E821BF86F8008CFD33 /* VideoCropView.swift */; };
-		A13E26F321BF86F8008CFD33 /* VideoScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13E26E921BF86F8008CFD33 /* VideoScrollView.swift */; };
-		A13E26F421BF86F8008CFD33 /* CropMaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13E26EA21BF86F8008CFD33 /* CropMaskView.swift */; };
-		A13E26F521BF86F8008CFD33 /* HandlerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13E26EC21BF86F8008CFD33 /* HandlerView.swift */; };
-		A13E26F621BF86F8008CFD33 /* PryntTrimmerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13E26ED21BF86F8008CFD33 /* PryntTrimmerView.swift */; };
 		A13E26F821C02D47008CFD33 /* TrimmerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13E26F721C02D47008CFD33 /* TrimmerView.swift */; };
 		A13E26FC21C031C8008CFD33 /* FrameSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13E26FB21C031C8008CFD33 /* FrameSectionController.swift */; };
 		A13E26FE21C03227008CFD33 /* FrameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13E26FD21C03227008CFD33 /* FrameCell.swift */; };
@@ -45,14 +37,6 @@
 		A13E26D321BF82D6008CFD33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A13E26D521BF82D6008CFD33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A13E26DB21BF841F008CFD33 /* uoit.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = uoit.mp4; sourceTree = "<group>"; };
-		A13E26E321BF86F8008CFD33 /* AssetVideoScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetVideoScrollView.swift; sourceTree = "<group>"; };
-		A13E26E421BF86F8008CFD33 /* AVAssetTimeSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVAssetTimeSelector.swift; sourceTree = "<group>"; };
-		A13E26E521BF86F8008CFD33 /* ThumbSelectorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThumbSelectorView.swift; sourceTree = "<group>"; };
-		A13E26E821BF86F8008CFD33 /* VideoCropView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCropView.swift; sourceTree = "<group>"; };
-		A13E26E921BF86F8008CFD33 /* VideoScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoScrollView.swift; sourceTree = "<group>"; };
-		A13E26EA21BF86F8008CFD33 /* CropMaskView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CropMaskView.swift; sourceTree = "<group>"; };
-		A13E26EC21BF86F8008CFD33 /* HandlerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandlerView.swift; sourceTree = "<group>"; };
-		A13E26ED21BF86F8008CFD33 /* PryntTrimmerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PryntTrimmerView.swift; sourceTree = "<group>"; };
 		A13E26F721C02D47008CFD33 /* TrimmerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrimmerView.swift; sourceTree = "<group>"; };
 		A13E26FB21C031C8008CFD33 /* FrameSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameSectionController.swift; sourceTree = "<group>"; };
 		A13E26FD21C03227008CFD33 /* FrameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameCell.swift; sourceTree = "<group>"; };
@@ -108,7 +92,6 @@
 			isa = PBXGroup;
 			children = (
 				A13E26F921C02D82008CFD33 /* Videos */,
-				A13E26E121BF86F8008CFD33 /* 3rd Party Libraries */,
 				A13E26C921BF82D4008CFD33 /* AppDelegate.swift */,
 				A13E26CB21BF82D4008CFD33 /* DemoViewController.swift */,
 				A1CF017921C3790C00EEB740 /* UIViewExtensions.swift */,
@@ -118,45 +101,6 @@
 				A13E26D021BF82D6008CFD33 /* Assets.xcassets */,
 				A13E26D221BF82D6008CFD33 /* LaunchScreen.storyboard */,
 				A13E26D521BF82D6008CFD33 /* Info.plist */,
-			);
-			path = Trimmer;
-			sourceTree = "<group>";
-		};
-		A13E26E121BF86F8008CFD33 /* 3rd Party Libraries */ = {
-			isa = PBXGroup;
-			children = (
-				A13E26E221BF86F8008CFD33 /* Parents */,
-				A13E26E521BF86F8008CFD33 /* ThumbSelectorView.swift */,
-				A13E26E721BF86F8008CFD33 /* Cropper */,
-				A13E26EB21BF86F8008CFD33 /* Trimmer */,
-			);
-			path = "3rd Party Libraries";
-			sourceTree = "<group>";
-		};
-		A13E26E221BF86F8008CFD33 /* Parents */ = {
-			isa = PBXGroup;
-			children = (
-				A13E26E321BF86F8008CFD33 /* AssetVideoScrollView.swift */,
-				A13E26E421BF86F8008CFD33 /* AVAssetTimeSelector.swift */,
-			);
-			path = Parents;
-			sourceTree = "<group>";
-		};
-		A13E26E721BF86F8008CFD33 /* Cropper */ = {
-			isa = PBXGroup;
-			children = (
-				A13E26E821BF86F8008CFD33 /* VideoCropView.swift */,
-				A13E26E921BF86F8008CFD33 /* VideoScrollView.swift */,
-				A13E26EA21BF86F8008CFD33 /* CropMaskView.swift */,
-			);
-			path = Cropper;
-			sourceTree = "<group>";
-		};
-		A13E26EB21BF86F8008CFD33 /* Trimmer */ = {
-			isa = PBXGroup;
-			children = (
-				A13E26EC21BF86F8008CFD33 /* HandlerView.swift */,
-				A13E26ED21BF86F8008CFD33 /* PryntTrimmerView.swift */,
 			);
 			path = Trimmer;
 			sourceTree = "<group>";
@@ -317,24 +261,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A13E26F521BF86F8008CFD33 /* HandlerView.swift in Sources */,
 				A1CF017A21C3790C00EEB740 /* UIViewExtensions.swift in Sources */,
 				A1E628BD21C585FD00163244 /* TimeSelector.swift in Sources */,
-				A13E26F621BF86F8008CFD33 /* PryntTrimmerView.swift in Sources */,
 				A1E628B921C4985400163244 /* FrameSectionModel.swift in Sources */,
 				A13E26FC21C031C8008CFD33 /* FrameSectionController.swift in Sources */,
-				A13E26F421BF86F8008CFD33 /* CropMaskView.swift in Sources */,
-				A13E26F321BF86F8008CFD33 /* VideoScrollView.swift in Sources */,
 				A13E26CC21BF82D4008CFD33 /* DemoViewController.swift in Sources */,
-				A13E26F021BF86F8008CFD33 /* ThumbSelectorView.swift in Sources */,
 				A13E26FE21C03227008CFD33 /* FrameCell.swift in Sources */,
 				A13E26CA21BF82D4008CFD33 /* AppDelegate.swift in Sources */,
 				A1E628BB21C55CDA00163244 /* FramesGenerator.swift in Sources */,
-				A13E26EE21BF86F8008CFD33 /* AssetVideoScrollView.swift in Sources */,
 				A1E628BF21C5D51C00163244 /* MathExtensions.swift in Sources */,
-				A13E26F221BF86F8008CFD33 /* VideoCropView.swift in Sources */,
 				A13E270021C03478008CFD33 /* Frame.swift in Sources */,
-				A13E26EF21BF86F8008CFD33 /* AVAssetTimeSelector.swift in Sources */,
 				A13E26F821C02D47008CFD33 /* TrimmerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

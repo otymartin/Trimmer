@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-protocol TimeSelectorDelegate: class {
+protocol TrimmerViewDelegate: class {
     
     func resumePlayback()
     
@@ -24,7 +24,7 @@ final class TimeSelector: NSObject {
     public var asset: AVAsset?
     
     /// The reciever of callbacks when user selects a starting time to trim the AVAsset.
-    public weak var delegate: TimeSelectorDelegate?
+    public weak var delegate: TrimmerViewDelegate?
     
     /// The time stamp on the AVAsset when the trimmer stops dragging.
     private var selectedTime: CMTime? {

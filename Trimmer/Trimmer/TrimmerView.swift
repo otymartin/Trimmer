@@ -10,6 +10,7 @@ import UIKit
 import IGListKit
 import AVFoundation
 
+
 final class TrimmerView: UIView {
     
     public lazy var trimmer = UIView()
@@ -35,14 +36,14 @@ final class TrimmerView: UIView {
     
 }
 
-extension TrimmerView: TimeSelectorDelegate {
+extension TrimmerView: TrimmerViewDelegate {
     
     public func seek(to time: CMTime) {
-        
+        print(time)
     }
     
     public func resumePlayback() {
-        
+        print("Resume Playback")
     }
     
 }
@@ -72,6 +73,7 @@ extension TrimmerView {
     
     public func set(_ asset: AVAsset) {
         self.generator.generate(for: asset)
+        self.selector.asset = asset
     }
 }
 
