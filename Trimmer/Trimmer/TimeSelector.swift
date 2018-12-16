@@ -20,7 +20,18 @@ protocol TimeSelectorDelegate: class {
 
 final class TimeSelector: NSObject {
     
+    /// The video asset being trimmed.
+    public var asset: AVAsset?
+    
+    /// The reciever of callbacks when user selects a starting time to trim the AVAsset.
     public weak var delegate: TimeSelectorDelegate?
+    
+    /// The time stamp on the AVAsset when the trimmer stops dragging.
+    private var selectedTime: CMTime? {
+        guard let duration = self.asset?.duration.seconds else { return nil }
+        let timeStamp = CGFloat(duration).multiplied(by: self.currentPositionAsPercentOfContentSize)
+        return CMTime(seconds: Double(timeStamp), preferredTimescale: 600)
+    }
     
     /// The absolute X position of our virtual time selector on the scrollView.
     private var startingPosition: CGFloat {
@@ -57,7 +68,7 @@ final class TimeSelector: NSObject {
     
     /// The current position of our invisible time selector expressed as a percentage of the overall contentSize
     private var currentPositionAsPercentOfContentSize: CGFloat {
-        return self.currentPosition.divided(by: self.contentSize.width).multiplied(by: 100)
+        return self.currentPosition.divided(by: self.contentSize.width)
     }
     
     /// The adjusted offset of the contentView.
@@ -75,11 +86,11 @@ final class TimeSelector: NSObject {
 extension TimeSelector: UIScrollViewDelegate {
     
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        print("CURRENT POSITION \(self.currentPosition)")
-        print("CURRENT POSITION %\(self.currentPositionAsPercentOfContentSize)")
+        guard let selectedTime = self.selectedTime else { return }
+        self.delegate?.seek(to: selectedTime)
     }
     
     public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        
+        self.delegate?.resumePlayback()
     }
 }
