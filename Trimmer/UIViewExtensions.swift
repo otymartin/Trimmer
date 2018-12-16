@@ -198,29 +198,29 @@ extension UIView {
     }
     
     /// EZSE: getter for an leftwards offset position from the leftmost edge.
-    public func leftOffset(_ offset: CGFloat) -> CGFloat {
-        return self.left - offset
+    public func leftOffset(_ contentOffset: CGFloat) -> CGFloat {
+        return self.left - contentOffset
     }
     
     /// EZSE: getter for an rightwards offset position from the rightmost edge.
-    public func rightOffset(_ offset: CGFloat) -> CGFloat {
-        return self.right + offset
+    public func rightOffset(_ contentOffset: CGFloat) -> CGFloat {
+        return self.right + contentOffset
     }
     
     /// EZSE: aligns the view to the top by a given offset.
-    public func topOffset(_ offset: CGFloat) -> CGFloat {
-        return self.top - offset
+    public func topOffset(_ contentOffset: CGFloat) -> CGFloat {
+        return self.top - contentOffset
     }
     
     /// EZSE: align the view to the bottom by a given offset.
-    public func bottomOffset(_ offset: CGFloat) -> CGFloat {
-        return self.bottom + offset
+    public func bottomOffset(_ contentOffset: CGFloat) -> CGFloat {
+        return self.bottom + contentOffset
     }
     
     //TODO: Add to readme
     /// EZSE: align the view widthwise to the right by a given offset.
-    public func alignRight(_ offset: CGFloat) -> CGFloat {
-        return self.w - offset
+    public func alignRight(_ contentOffset: CGFloat) -> CGFloat {
+        return self.w - contentOffset
     }
     
     /// EZSwiftExtensions
@@ -281,8 +281,8 @@ extension UIView {
     }
     //TODO: add this to readme
     /// EZSwiftExtensions
-    public func addShadow(offset: CGSize, radius: CGFloat, color: UIColor, opacity: Float, cornerRadius: CGFloat? = nil) {
-        self.layer.shadowOffset = offset
+    public func addShadow(contentOffset: CGSize, radius: CGFloat, color: UIColor, opacity: Float, cornerRadius: CGFloat? = nil) {
+        self.layer.shadowOffset = contentOffset
         self.layer.shadowRadius = radius
         self.layer.shadowOpacity = opacity
         self.layer.shadowColor = color.cgColor

@@ -26,4 +26,8 @@ public extension CGFloat {
     public func divided(by number: CGFloat) -> CGFloat {
         return self / number
     }
+    
+    public var percent: CGFloat {
+        return self.divided(by: 100)
+    }
 }

@@ -19,11 +19,15 @@ public struct FrameSectionMath {
     }
     
     public static var selectorLeftOffset: CGFloat {
-        return self.collectionViewSize.width - ((self.frameSize.width * 3) + self.selectorBorderWidth)
+        return self.collectionViewSize.width - (self.visibleFramesWidth + self.selectorBorderWidth)
+    }
+    
+    public static var visibleFramesWidth: CGFloat {
+        return self.frameSize.width.multiplied(by: 3)
     }
     
     public static var collectionViewContentOffset: CGFloat {
-        return self.collectionViewSize.width - (self.frameSize.width * 3)
+        return self.collectionViewSize.width - self.visibleFramesWidth
     }
     
     public static var collectionViewSize: CGSize {
