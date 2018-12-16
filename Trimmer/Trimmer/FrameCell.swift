@@ -8,8 +8,20 @@
 
 import UIKit
 
+enum CornersToRound {
+    case left
+    case right
+    case none
+}
+
 final class FrameCell: UICollectionViewCell {
     
+    public var shouldRoundCorners: CornersToRound = .none {
+        didSet {
+            self.roundCorners()
+        }
+    }
+
     private lazy var imageView = UIImageView()
     
     override func prepareForReuse() {
@@ -28,5 +40,17 @@ extension FrameCell {
         self.imageView.backgroundColor = .clear
         self.imageView.contentMode = .scaleAspectFill
         self.contentView.addSubview(self.imageView)
+        self.roundCorners()
+    }
+    
+    private func roundCorners() {
+        switch shouldRoundCorners {
+        case .left:
+            self.contentView.roundCorners(UIRectCorner.topLeft.union(UIRectCorner.bottomLeft), radius: 6)
+        case .right:
+            self.contentView.roundCorners(UIRectCorner.topRight.union(UIRectCorner.bottomRight), radius: 6)
+        default:
+            break
+        }
     }
 }
