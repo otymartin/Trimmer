@@ -11,11 +11,11 @@ import IGListKit
 public struct FrameSectionMath {
     
     public static var selectorBorderWidth: CGFloat {
-        return 2
+        return 3
     }
     
     private static var collectionViewHeight: CGFloat {
-        return 64
+        return 66
     }
     
     public static var selectorLeftOffset: CGFloat {

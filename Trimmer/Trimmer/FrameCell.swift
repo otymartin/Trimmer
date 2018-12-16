@@ -30,14 +30,15 @@ extension FrameCell {
     public func configure(with frame: Frame?) {
         self.layer.shouldRasterize = true
         self.imageView.frame = self.bounds
+        self.imageView.clipsToBounds = true
         self.imageView.image = frame?.image
         self.imageView.backgroundColor = .clear
-        self.imageView.clipsToBounds = true
         self.imageView.contentMode = .scaleAspectFill
         self.contentView.addSubview(self.imageView)
-        self.layer.rasterizationScale = UIScreen.main.scale
+        
         self.layer.masksToBounds = false
         self.contentView.layer.masksToBounds = true
+        self.layer.rasterizationScale = UIScreen.main.scale
         self.layer.backgroundColor = UIColor.clear.cgColor
         guard let position = frame?.position else { return }
         self.roundCorners(for: position)
