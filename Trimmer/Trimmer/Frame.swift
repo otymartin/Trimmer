@@ -9,15 +9,23 @@
 import IGListKit
 import AVFoundation
 
+public enum FramePosition {
+    case first
+    case last
+}
+
 final class Frame {
     
     public let time: CMTime
 
     public var image: UIImage?
     
-    public init(time: CMTime, image: UIImage? = nil) {
-        self.image = image
+    public var position: FramePosition
+    
+    public init(time: CMTime, image: UIImage? = nil, position: FramePosition) {
         self.time = time
+        self.image = image
+        self.position = position
     }
 }
 
@@ -28,13 +36,13 @@ extension Frame: ListDiffable {
     }
     
     public func isEqual(toDiffableObject object: ListDiffable?) -> Bool {
-        return self.time == (object as? Frame)?.time && self.image == (object as? Frame)?.image
+        return self.time == (object as? Frame)?.time && self.image == (object as? Frame)?.image && self.position == (object as? Frame)?.position
     }
 }
 
 extension Frame: Equatable {
     
     public static func ==(lhs: Frame, rhs: Frame) -> Bool {
-        return lhs.time == rhs.time && lhs.image == rhs.image
+        return lhs.time == rhs.time && lhs.image == rhs.image && lhs.position == rhs.position
     }
 }

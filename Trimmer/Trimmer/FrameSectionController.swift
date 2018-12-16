@@ -64,6 +64,7 @@ final class FrameSectionController: ListSectionController {
         guard let cell = self.collectionContext?.dequeueReusableCell(of: FrameCell.self, for: self, at: index) as? FrameCell else {
             fatalError()
         }
+        print(self.collectionContext?.index(for: cell, sectionController: self))
         cell.configure(with: self.frame)
         return cell
     }

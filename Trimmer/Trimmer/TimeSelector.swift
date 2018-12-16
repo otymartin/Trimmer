@@ -131,15 +131,11 @@ extension TimeSelector: UIScrollViewDelegate {
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         self.delegate?.trimmer(true)
         self.delegate?.dimView(leftOffset: self.leftOffset, rightOffset: self.rightOffset)
-        guard let selectedTime = self.selectedTime else {
-            print("No Time Selected")
-            return
-        }
+        guard let selectedTime = self.selectedTime else { return }
         self.delegate?.seek(to: selectedTime)
     }
     
-    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        print("WillEndDraggin")
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         self.delegate?.resumePlayback()
     }
 }
