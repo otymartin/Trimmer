@@ -15,7 +15,14 @@ protocol TrimmerViewDelegate: class {
     
     func seek(to time: CMTime)
     
+    func dimView(leftOffset: CGFloat)
+    
     var collectionView: UICollectionView { get set }
+}
+
+extension TrimmerViewDelegate {
+    
+    func dimView(leftOffset: CGFloat) {}
 }
 
 final class TimeSelector: NSObject {
@@ -86,6 +93,8 @@ final class TimeSelector: NSObject {
 extension TimeSelector: UIScrollViewDelegate {
     
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        print(self.contentOffset)
+        self.delegate?.dimView(leftOffset: self.contentOffset ?? 0 < 0 ? 0 : self.contentOffset ?? 0)
         guard let selectedTime = self.selectedTime else { return }
         self.delegate?.seek(to: selectedTime)
     }
