@@ -15,6 +15,8 @@ protocol TrimmerViewDelegate: class {
     
     func seek(to time: CMTime)
     
+    func trimmer(_ isTrimming: Bool)
+    
     var collectionView: UICollectionView { get set }
     
     func dimView(leftOffset: CGFloat, rightOffset: CGFloat)
@@ -22,7 +24,18 @@ protocol TrimmerViewDelegate: class {
 
 extension TrimmerViewDelegate {
     
-    func dimView(leftOffset: CGFloat) {}
+    func trimmer(isTrimming: Bool) {}
+    
+    func dimView(leftOffset: CGFloat, rightOffset: CGFloat) {}
+    
+    var collectionView: UICollectionView {
+        get {
+            return UICollectionView()
+        }
+        set {
+            collectionView = newValue
+        }
+    }
 }
 
 final class TimeSelector: NSObject {
@@ -116,12 +129,17 @@ final class TimeSelector: NSObject {
 extension TimeSelector: UIScrollViewDelegate {
     
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        self.delegate?.trimmer(true)
         self.delegate?.dimView(leftOffset: self.leftOffset, rightOffset: self.rightOffset)
-        guard let selectedTime = self.selectedTime else { return }
+        guard let selectedTime = self.selectedTime else {
+            print("No Time Selected")
+            return
+        }
         self.delegate?.seek(to: selectedTime)
     }
     
-    public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        print("WillEndDraggin")
         self.delegate?.resumePlayback()
     }
 }

@@ -32,12 +32,35 @@ class DemoViewController: UIViewController {
     }
 }
 
+extension DemoViewController: TrimmerViewDelegate {
+    
+    func trimmer(_ isTrimming: Bool) {
+        self.player.pause()
+    }
+    
+    func seek(to time: CMTime) {
+        switch self.player.playbackState {
+        case .playing:
+            self.player.pause()
+        default:
+            break
+        }
+        self.player.seekToTime(to: time, toleranceBefore: .zero, toleranceAfter: .zero)
+    }
+    
+    func resumePlayback() {
+        self.player.playFromCurrentTime()
+    }
+    
+}
+
 extension DemoViewController {
     
     private func configure() {
         self.view.backgroundColor = .white
         self.trimmer = TrimmerView(frame: CGRect(x: 0, y: self.view.bounds.height - 200, width: FrameSectionMath.collectionViewSize.width, height: FrameSectionMath.collectionViewSize.height))
         self.view.addSubview(self.trimmer)
+        self.trimmer.delegate = self
     }
     
     private func configurePlayer(with url: URL) {

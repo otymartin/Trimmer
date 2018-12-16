@@ -23,6 +23,8 @@ final class TrimmerView: UIView {
     
     private lazy var generator = FramesGenerator()
     
+    public weak var delegate: TrimmerViewDelegate?
+    
     private lazy var adapter = ListAdapter(updater: ListAdapterUpdater(), viewController: nil)
     
     public lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: ListCollectionViewLayout(stickyHeaders: false, scrollDirection: .horizontal, topContentInset: 0, stretchToEdge: false))
@@ -40,10 +42,16 @@ final class TrimmerView: UIView {
 
 extension TrimmerView: TrimmerViewDelegate {
     
+    public func trimmer(_ isTrimming: Bool) {
+        self.delegate?.trimmer(isTrimming)
+    }
+    
     public func seek(to time: CMTime) {
+        self.delegate?.seek(to: time)
     }
     
     public func resumePlayback() {
+        self.delegate?.resumePlayback()
     }
     
     public func dimView(leftOffset: CGFloat, rightOffset: CGFloat) {
