@@ -12,7 +12,9 @@ import AVFoundation
 
 final class TrimmerView: UIView {
     
-    public lazy var selector = UIView()
+    public lazy var trimmer = UIView()
+    
+    private lazy var selector = TimeSelector()
     
     private lazy var generator = FramesGenerator()
     
@@ -23,6 +25,8 @@ final class TrimmerView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.configure()
+        self.selector.delegate = self
+        self.adapter.scrollViewDelegate = self.selector
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -81,18 +85,18 @@ extension TrimmerView {
     }
     
     private func addSelector() {
-        self.selector.layer.cornerRadius = 6
-        self.selector.backgroundColor = .clear
-        self.selector.isUserInteractionEnabled = false
-        self.selector.layer.borderColor = UIColor.white.cgColor
-        self.selector.layer.borderWidth = FrameSectionMath.selectorBorderWidth
-        self.addSubview(self.selector)
-        self.selector.snp.makeConstraints { [weak self] (make) in
+        self.trimmer.layer.cornerRadius = 6
+        self.trimmer.backgroundColor = .clear
+        self.trimmer.isUserInteractionEnabled = false
+        self.trimmer.layer.borderColor = UIColor.white.cgColor
+        self.trimmer.layer.borderWidth = FrameSectionMath.selectorBorderWidth
+        self.addSubview(self.trimmer)
+        self.trimmer.snp.makeConstraints { [weak self] (make) in
             guard let view = self else { return }
             make.width.equalTo(FrameSectionMath.selectorSize.width)
             make.height.equalTo(FrameSectionMath.selectorSize.height)
             make.leading.equalTo(view.snp.leading).offset(FrameSectionMath.selectorLeftOffset)
         }
-        self.selector.layoutIfNeeded()
+        self.trimmer.layoutIfNeeded()
     }
 }
