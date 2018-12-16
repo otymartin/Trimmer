@@ -35,6 +35,18 @@ final class TrimmerView: UIView {
     
 }
 
+extension TrimmerView: TimeSelectorDelegate {
+    
+    public func seek(to time: CMTime) {
+        
+    }
+    
+    public func resumePlayback() {
+        
+    }
+    
+}
+
 extension TrimmerView: FramesGeneratorDelegate {
     
     public func performUpdates() {

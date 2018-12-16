@@ -9,9 +9,18 @@
 import UIKit
 import AVFoundation
 
+protocol TimeSelectorDelegate: class {
+    
+    func resumePlayback()
+    
+    func seek(to time: CMTime)
+    
+    var collectionView: UICollectionView { get set }
+}
+
 final class TimeSelector: NSObject {
     
-    public weak var delegate: TrimmerView?
+    public weak var delegate: TimeSelectorDelegate?
     
     /// The absolute X position of our virtual time selector on the scrollView.
     private var startingPosition: CGFloat {
