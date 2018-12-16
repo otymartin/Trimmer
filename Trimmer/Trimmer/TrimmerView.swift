@@ -15,6 +15,10 @@ final class TrimmerView: UIView {
     
     public lazy var trimmer = UIView()
     
+    private lazy var leftDimView = UIView()
+    
+    private lazy var rightDimView = UIView()
+    
     private lazy var selector = TimeSelector()
     
     private lazy var generator = FramesGenerator()
@@ -26,8 +30,6 @@ final class TrimmerView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.configure()
-        self.selector.delegate = self
-        self.adapter.scrollViewDelegate = self.selector
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -81,8 +83,11 @@ extension TrimmerView {
     
     private func configure() {
         self.configureCollectionView()
-        self.addSelector()
+        self.addTrimmer()
+        self.addDimViews()
         self.generator.delegate = self
+        self.selector.delegate = self
+        self.adapter.scrollViewDelegate = self.selector
     }
     
     private func configureCollectionView() {
@@ -98,7 +103,7 @@ extension TrimmerView {
         self.addSubview(self.collectionView)
     }
     
-    private func addSelector() {
+    private func addTrimmer() {
         self.trimmer.layer.cornerRadius = 6
         self.trimmer.backgroundColor = .clear
         self.trimmer.isUserInteractionEnabled = false
@@ -112,5 +117,25 @@ extension TrimmerView {
             make.leading.equalTo(view.snp.leading).offset(FrameSectionMath.selectorLeftOffset)
         }
         self.trimmer.layoutIfNeeded()
+    }
+    
+    private func addDimViews() {
+        self.leftDimView.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        self.addSubview(self.leftDimView)
+        self.leftDimView.snp.makeConstraints { (make) in
+            make.leading.equalTo(trimmer.snp.leading)
+            make.trailing.equalTo(trimmer.snp.leading)
+        }
+        
+        self.leftDimView.layoutIfNeeded()
+        
+        self.rightDimView.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        self.addSubview(self.rightDimView)
+        self.rightDimView.snp.makeConstraints { (make) in
+            make.leading.equalTo(trimmer.snp.trailing)
+            make.trailing.equalTo(trimmer.snp.trailing)
+        }
+        
+        self.rightDimView.layoutIfNeeded()
     }
 }
