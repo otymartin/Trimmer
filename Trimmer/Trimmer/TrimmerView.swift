@@ -46,12 +46,12 @@ extension TrimmerView: TrimmerViewDelegate {
     public func resumePlayback() {
     }
     
-    public func dimView(leftOverflow: CGFloat, rightOverflow: CGFloat) {
+    public func dimView(leftOffset: CGFloat, rightOffset: CGFloat) {
         self.leftDimView.snp.updateConstraints { (make) in
-            make.leading.equalTo(trimmer.snp.leading).offset(leftOverflow)
+            make.leading.equalTo(trimmer.snp.leading).offset(leftOffset)
         }
         self.rightDimView.snp.updateConstraints { (make) in
-            make.trailing.equalTo(trimmer.snp.trailing).offset(rightOverflow.add(FrameSectionMath.selectorBorderWidth))
+            make.trailing.equalTo(trimmer.snp.trailing).offset(rightOffset)
         }
     }
     
