@@ -95,7 +95,8 @@ final class TimeSelector: NSObject {
     
     /// How much to offset the left dimming view left of the trimming view.
     private var leftOffset: CGFloat {
-        return -(self.leftOverflow).subtract(FrameSectionMath.selectorBorderWidth)
+        let value = -(self.leftOverflow).subtract(FrameSectionMath.selectorBorderWidth)
+        return value >= 0 ? 0 : value
     }
     
     /// How much of the frames slide to the right of the trimmer view.
@@ -106,7 +107,8 @@ final class TimeSelector: NSObject {
     
     /// How mich to offset the right dimming view right of the trimming view.
     private var rightOffset: CGFloat {
-        return self.rightOverflow.subtract(FrameSectionMath.selectorBorderWidth)
+        let value = self.rightOverflow.subtract(FrameSectionMath.selectorBorderWidth)
+        return value <= 0 ? 0 : value
     }
     
 }
@@ -114,6 +116,7 @@ final class TimeSelector: NSObject {
 extension TimeSelector: UIScrollViewDelegate {
     
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        print(rightOffset)
         self.delegate?.dimView(leftOffset: self.leftOffset, rightOffset: self.rightOffset)
         guard let selectedTime = self.selectedTime else { return }
         self.delegate?.seek(to: selectedTime)
